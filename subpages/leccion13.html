@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Lección 13: Elementos flotantes (la propiedad float)</title>
+<link rel="stylesheet" href="css/estil01.css">
+</head>
+<body>
+<h1>Lección 13: Elementos flotantes (la propiedad float)</h1>
+Los elementos se pueden hacer flotar a la derecha o a la izquierda usando la propiedad <tt>float</tt>. Es decir, que la caja con su contenido flota bien a la derecha o la izquierda de un documento (o de la caja contenedora) [véase la <a href="leccion03.html">lección 9</a> que describe el modelo de caja]. La siguiente imagen muestra este principio:
+<br><br><img src="img/img017.png"><br>
+Por ejemplo, si quisiéramos texto con ajuste de línea alrededor de una imagen, el resultado sería el siguiente:
+<br><br><img src="img/img018.png"><br>
+<h2>¿Cómo se hace?</h2>
+El código HTML del ejemplo anterior es el siguiente:
+<pre>
+	&lt;div id="picture"&gt;
+	&lt;img src="bill.jpg" alt="Bill Gates"&gt;
+	&lt;/div&gt;
+	&lt;p&gt;causas naturales et antecedentes, 
+	idciro etiam nostrarum voluntatum...&lt;/p&gt;
+</pre>
+Para conseguir que la imagen flote a la izquierda y el texto se ajuste a su alrededor, sólo hay que definir el ancho de la caja que rodea la imagen y, después de eso, fijar la propiedad float con el valor left:
+<pre>
+	#picture {
+	float:left;
+	width: 100px;
+	}
+</pre>
+<a href="ejemplos/ejemplo044.html">Ver Ejemplo</a><br>
+<h2>Otro ejemplo: columnas</h2>
+La propiedad float también se puede usar para crear columnas en un documento. Para crear dichas columnas tendrás que estructurar las columnas deseadas en el código HTML con la etiqueta &lt;div&gt;, como se muestra a continuación:
+<pre>
+	&lt;div id="column1"&gt;
+	&lt;p&gt;Haec disserens qua de re agatur
+	et in quo causa consistat non videt...&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div id="column2"&gt;
+	&lt;p&gt;causas naturales et antecedentes, 
+	idciro etiam nostrarum voluntatum...&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div id="column3"&gt;
+	&lt;p&gt;nam nihil esset in nostra 
+	potestate si res ita se haberet...&lt;/p&gt;
+	&lt;/div&gt;
+</pre>
+Ahora, el ancho deseado de las columnas se fija, por ejemplo, en un porcentaje equivalente a un 33%, y luego simplemente se flota cada columna a la izquierda definiendo la propiedad float:
+<pre>
+	#column1 {
+	float:left;
+	width: 33%;
+	}
+	#column2 {
+	float:left;
+	width: 33%;
+	}
+	#column3 {
+	float:left;
+	width: 33%;
+	}
+</pre>
+<a href="ejemplos/ejemplo045.html">Ver Ejemplo</a><br>
+La propiedad <tt>float</tt> se puede establecer con los siguientes valores: <b>left</b> (izquierda), <b>right</b> (derecha) o <b>none</b> (ninguna).
+<h2>La propiedad <tt>clear</tt></h2>
+La propiedad clear se usa para controlar cómo se comportarán los elementos que siguen a los elementos flotados de un documento.
+
+Por defecto, los elementos siguientes se mueven hacia arriba para rellenar el espacio disponible que quedará libre al flotar una caja hacia un lado. Echa un vistazo al ejemplo anterior en el que el texto se desplaza de forma automática hacia arriba junto a la imagen de Bill Gates.
+
+La propiedad clear puede tomar los valores:left, right, both o none. El principio consiste en que, si clear, por ejemplo, se fija en both para una caja, el borde del margen superior de esta caja siempre estará debajo del borde del margen inferior para las posibles cajas flotantes que vengan de arriba.
+<pre>
+	&lt;div id="picture"&gt;
+	&lt;img src="bill.jpg" alt="Bill Gates"&gt;
+	&lt;/div&gt;
+	&lt;h1&gt;Bill Gates&lt;/h1&gt;
+	&lt;p class="floatstop"&gt;causas naturales et antecedentes, 
+	idciro etiam nostrarum voluntatum...&lt;/p&gt;
+</pre>	
+
+Para evitar que el texto flote hacia arriba junto a la imagen, podemos añadir lo siguiente al código CSS:
+<pre>
+	#picture {
+	float:left;
+	width: 100px;
+	}
+	.floatstop {
+	clear:both;
+	}
+</pre>
+<a href="ejemplos/ejemplo046.html">Ver Ejemplo</a><br>
+<h2>Resumen</h2>
+La propiedad <tt>float</tt> es muy útil en muchas situaciones y a menudo se usará junto con el posicionamiento. En la lección siguiente examinaremos cómo posicionar una caja, bien de forma relativa o absoluta.
+<hr>
+<a href="leccion12.html">Leccion Anterior</a><div align="center"><a href="../index.html">Index</a></div><div align="right"><a href="leccion14.html">Pagina Siguiente</a></div>
+</body>
+</html>

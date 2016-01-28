@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Lección 8: Agrupación de elementos (span y div)</title>
+<link rel="stylesheet" href="css/estil01.css">
+</head>
+<body>
+<h1>Lección 8: Agrupación de elementos (span y div)</h1>
+Los elementos <tt>&lt;span&gt;</tt> y <tt>&lt;div&gt;</tt> se usan para agrupar y estructurar un documento, y se usarán, a menudo, junto con los atributos <tt>class</tt> e <tt>id</tt>.<br><br>
+En esta lección revisaremos el uso de los elementos <tt>&lt;span&gt;</tt> y <tt>&lt;div&gt;</tt>, ya que estos dos elementos de HTML son, precisamente, de importanca clave en lo que se refiere a CSS.
+<ul>
+<li><a href="#ancla01">Agrupación con el elemento &lt;span&gt;</a></li>
+<li><a href="#ancla02">Agrupación con el elemento &lt;div&gt;</a></li>
+</ul>
+<a name="ancla01"><h2>Agrupación con <tt>&lt;span&gt;</tt></h2>
+El elemento <tt>&lt;span&gt;</tt> es lo que se podría denominar un elemento neutro que no añade nada al documento en sí. Pero con CSS <tt>&lt;span&gt;</tt> se puede usar para añadir características visuales distintivas a partes específicas de texto en los documentos.
+Un ejemplo de esto podría ser esta cita de Benjamin Franklin:
+<pre>
+&lt;p&gt;El que pronto se acuesta y pronto se levanta,
+es hombre saludable, rico y sabio.&lt;/p&gt;
+</pre>
+Digamos que queremos que lo que el señor Franklin considera como las ventajas de no pasarse todo el día durmiendo, aparezca enfatizado en rojo. Para este fin, podemos marcar dichas ventajas con el elemento <tt>&lt;span&gt;</tt>. A cada elemento span se le añade el atributo class, que podemos definir así en nuestra hoja de estilo:
+<pre>
+&lt;p&gt;El que pronto se acuesta y pronto se levanta,
+es hombre &lt;span class="ventaja"&gt;saludable&lt;/span&gt;,
+&lt;span class="ventaja"&gt;rico&lt;/span&gt;
+y &lt;span class="ventaja"&gt;sabio&lt;/span&gt;.&lt;/p&gt;
+</pre>
+El código CSS necesario para producir este efecto es el siguiente:
+<pre>
+	span.benefit {
+	color:red;
+	}
+</pre>
+<a href="ejemplos/ejemplo034.html">Ver Ejemplo</a><br>
+Por supuesto, se puede usar también el atributo id para añadir estilo a los elementos definidos con <tt>&lt;span&gt;</tt>. Pero recuerda que tendrás que aplicar siempre un atributo <tt>id</tt> único para cada uno de los tres elementos <tt>&lt;span&gt;</tt>, tal como aprendimos en la lección anterior.
+<a name="alncla02"><h2>Agrupación con el elemento <tt>&lt;div&gt;</tt></h2>
+Mientras que <tt>&lt;span&gt;</tt> se usa dentro de un elemento a nivel de bloque como vimos en el ejemplo anterior, <tt>&lt;div&gt;</tt> se usa para agrupar uno o más elementos a nivel de bloque.<br>
+Aparte de esta diferencia, la agrupación con <tt>&lt;div&gt;</tt> funciona más o menos igual. Veamos un ejemplo con dos listas de presidentes de los EE.UU., divididas según su filiación política.
+<pre>
+&lt;div id="democrats"&gt;
+&lt;ul&gt;
+&lt;li&gt;Franklin D. Roosevelt&lt;/li&gt;
+&lt;li&gt;Harry S. Truman&lt;/li&gt;
+&lt;li&gt;John F. Kennedy&lt;/li&gt;
+&lt;li&gt;Lyndon B. Johnson&lt;/li&gt;
+&lt;li&gt;Jimmy Carter&lt;/li&gt;
+&lt;li&gt;Bill Clinton&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id="republicans"&gt;
+&lt;ul&gt;
+&lt;li&gt;Dwight D. Eisenhower&lt;/li&gt;
+&lt;li&gt;Richard Nixon&lt;/li&gt;
+&lt;li&gt;Gerald Ford&lt;/li&gt;
+&lt;li&gt;Ronald Reagan&lt;/li&gt;
+&lt;li&gt;George Bush&lt;/li&gt;
+&lt;li&gt;George W. Bush&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+En nuestra hoja de estilo podemos utilizar la agrupación del mismo modo que antes:
+<pre>
+	#democrats {
+	background:blue;
+	}
+	#republicans {
+	background:red;
+	}
+</pre>
+<a href="ejemplos/ejemplo035.html">Ver Ejemplo</a><br>
+En los ejemplos anteriores, sólo hemos usado &lt;div&gt; y &lt;span&gt; con cosas muy sencillas como, por ejemplo, texto y colores de fondo. Ambos elementos tienen el potencial para realizar cosas más avanzadas. Sin embargo, esto no se presentará en esta lección; lo veremos más adelante a lo largo del tutorial.<br>
+<h2>Resumen</h2>
+En la lección 7 y 8 has aprendido nociones sobre los selectores id y class y los elementos <tt>span</tt> y <tt>div</tt>
+Ahora ya deberías de ser capaz de agrupar e identificar, más o menos, todas las partes de un documento, lo que supone dar un gran paso adelante hacia el dominio de CSS. En la <a href="leccion09.html">lección 9</a> te presentaremos el modelo de caja.
+<hr>
+<a href="leccion07.html">Leccion Anterior</a><div align="center"><a href="../index.html">Index</a></div><div align="right"><a href="leccion09.html">Pagina Siguiente</a></div>
+</body>
+</html>

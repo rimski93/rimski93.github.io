@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>Lección 6: Enlaces</title>
+<link rel="stylesheet" href="css/estil01.css">
+</head>
+<body>
+<h1>Lección 6: Enlaces</h1>
+
+Ya puedes aplicar lo que aprendiste en las lecciones anteriores a los enlaces (es decir, cambiar colores, fuentes, subrayado, etc.). La novedad respecto a los enlaces es que CSS te permite definir estas propiedades de forma diferente dependiendo del estado del mismo, es decir, si el enlace se ha visitado, no se ha visitado, si es el enlace activo o si el cursor está sobre dicho enlace. Esto permite añadir efectos divertidos y útiles a tu sitio web. Para controlar estos efectos se usan lo que se ha denominado como pseudo-clases.
+<h2>¿Qué es una pseudo-clase?</h2>
+
+Una pseudo-clase te permite tener en cuenta diferentes condiciones o eventos al definir una propiedad para una etiqueta HTML.
+
+Veamos un ejemplo. Como ya sabes, los enlaces se especifican en HTML con la etiqueta <tt>&lt;a&gt;</tt>. Por lo tanto, podemos usar a como selector en CSS:
+<pre>
+	a {
+	color: blue;
+	}
+</pre>
+
+Todo enlace tiene diferentes estados. Por ejemplo, visitado o no visitado. Puedes usar una pseudo-clase para asignar diferentes estilos a los enlaces visitados y no visitados.
+<pre>
+	a:link {
+	color: blue;
+	}
+	a:visited {
+	color: red;
+	}
+</pre>
+
+Usa <tt>a:link</tt> y <tt>a:visited</tt> para enlaces visitados y no visitados, respectivamente. A los enlaces activos se les aplica la pseudo-clase <tt>a:active</tt>, y <tt>a:hover</tt> cuando el cursor se coloca o pasa sobre el enlace.<br>
+Vamos a repasar ahora cada una de las cuatro pseudo-clases con ejemplos y más explicaciones.
+<br><h3>Pseudo-clase <tt>a:link</tt></h3>
+La pseudo clase <tt>:link</tt> se usa para enlaces que dirigen a páginas que el usuario no ha visitado.
+En el ejemplo de código que sigue, los enlaces no visitados tendrán un color azul claro.
+<pre>
+	a:link {
+	color: #6699CC;
+	}
+</pre>
+<a href="ejemplos/ejemplo024.html">Ver Ejemplo</a>
+<h3>Pseudo-clase <tt>a:visited</tt></h3>
+La pseudo clase <tt>:visited</tt> se usa para enlaces que dirigen a páginas que el usuario ya ha visitado. Por ejemplo, el código siguiente hará que todos los enlaces visitados sean de color púrpura oscuro:
+<pre>
+	a:visited {
+	color: #660099;
+	}
+</pre>
+<a href="ejemplos/ejemplo025.html">Ver Ejemplo</a>
+<h3>Pseudo-clase <tt>a:active:</tt></h3>
+La pseudo clase <tt>:active</tt> se usa para enlaces que están activos.
+El código de este ejemplo hace que el color de fondo para los enlaces activos sea amarillo:
+<pre>
+	a:active {
+	background-color: #FFFF00;
+	}
+</pre>
+<a href="ejemplos/ejemplo026.html">Ver Ejemplo</a>
+<h3>Pseudo-clase <tt>a:hover</tt></h3>
+La pseudo clase <tt>a:hover</tt> se usa cuando el puntero del ratón pasa por encima de un enlace.
+Esta pseudo-clase se puede usar para crear efectos interesantes. Por ejemplo, si queremos que nuestros enlaces sean de color naranja y estén en cursiva cuando el cursor pase sobre ellos, el código CSS que utilizaremos será el siguiente:
+<pre>
+	a:hover {
+	color: orange;
+	font-style: italic;
+	}
+</pre>
+<a href="ejemplos/ejemplo027.html">Ver Ejemplo</a>
+
+<h2>Ejemplo 1: Efecto cuando el cursor está encima de un enlace</h2>
+
+Es bastante popular crear diferentes efectos cuando el cursor está encima de un enlace. Por lo tanto, examinaremos unos cuantos ejemplos más relacionados con la pseudo-clase <tt>:hover</tt>.
+<h3>Ejemplo 1a: Espaciado entre letras</h3>
+
+Como recordarás de la <a href="texto.html">lección 5</a>, el espaciado entre los caracteres se puede ajustar usando la propiedad letter-spacing. Esta propiedad se puede aplicar a los enlaces para crear un efecto especial:
+<pre>
+	a:hover {
+	letter-spacing: 10px;
+	font-weight:bold;
+	color:red;
+	}
+</pre>
+<a href="ejemplos/ejemplo028.html">Ver Ejemplo</a>
+
+<h3>Ejemplo 1b: MAYÚSCULAS y minúsculas</h3>
+En la <a href="texto.html">lección 5</a> examinamos la propiedad <tt>text-transform</tt>, que sirve para intercambiar entre letras en mayúscula y minúscula. Esto se puede usar también para crear un determinado efecto en los enlaces:
+<pre>
+	a:hover {
+	text-transform: uppercase;
+	font-weight:bold;
+	color:blue;
+	background-color:yellow;
+	}
+</pre>
+<a href="ejemplos/ejemplo029.html">Ver Ejemplo</a>
+Estos dos ejemplos dan una idea sobre las posibilidades casi infinitas al combinar diferentes propiedades. Ya puedes ir creando tus propios efectos... ¡inténtalo!
+
+<h2>Ejemplo 2: Quitar el subrayado de los enlaces</h2>
+
+Una pregunta muy recurrente es: ¿cómo quito el subrayado de los enlaces?
+<b>Deberías considerar cuidadosamente la necesidad de quitar el subrayado, pues esto podría disminuir la usabilidad de tu sitio web de forma significativa.</b> La gente está acostumbrada al subrayado azul de los enlaces en las páginas web y saben que pueden hacer clic en ellos. ¡Incluso mi abuelita lo sabe! Si cambias el subrayado y el color de los enalces, existe una buena posibilidad de que los usuarios se confundan y, por lo tanto, no saquen todo el provecho al contenido de tu sitio web.
+Dicho esto, es muy sencillo quitar el subrayado de los enlaces. Como recordarás de la lección 5, la propiedad <tt>text-decoration</tt> se puede usar para determinar si el texto aparece subrayado o no. Para quitar el subrayado, establece el valor de <tt>text-decoration</tt> a <tt>none</tt>.
+
+<pre>	
+	a {
+	text-decoration:none;
+	}
+</pre>
+De forma alternativa, puedes establecer la propiedad <tt>text-decoration</tt> junto con otras propiedades para las cuatro pseudo clases.
+
+<pre>
+	a:link {
+	color: blue;
+	text-decoration:none;
+	}
+	a:visited {
+	color: purple;
+	text-decoration:none;
+	}
+	a:active {
+	background-color: yellow;
+	text-decoration:none;
+	}
+	a:hover {
+	color:red;
+	text-decoration:none;
+	}
+</pre>
+<a href="ejemplos/ejemplo030.html">Ver Ejemplo</a>
+<h2>Resumen</h2>
+
+En esta lección has aprendido nociones relativas a las pseudo-clases, a la vez que has usado algunas de las propiedades de lecciones anteriores. Esto debería darte una idea de algunas de las posibilidades que ofrece CSS.
+
+En la lección siguiente te enseñaremos cómo definir propiedades para elementos específicos y para grupos de elementos.
+<hr>
+<a href="texto.html">Leccion Anterior</a><div align="center"><a href="../index.html">Index</a></div><div align="right"><a href="leccion07.html">Pagina Siguiente</a></div>
+</body>
+</html>

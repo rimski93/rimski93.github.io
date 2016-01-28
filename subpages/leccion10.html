@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Lección 10: Margen y relleno (padding)</title>
+<link rel="stylesheet" href="css/estil01.css">
+</head>
+<body>
+<h1>Lección 10: Margen y relleno (padding)</h1>
+
+En la lección anterior te presentamos el concepto de modelo de caja. En ésta, examinaremos cómo cambiar la presentación de los elementos estableciendo las propiedades margin y padding.
+<ul>
+<li><a href="#ancla01">Establecer el márgen de un elemento</a></li>
+<li><a href="#ancla02">Establecer el relleno de un elemento</a></li>
+</ul>
+<a name="ancla01"><h2>Establecer el márgen de un elemento</h2>
+
+Todo elemento tiene cuatro lados: derecho, izquierdo, superior e inferior. La propiedad <tt>margin</tt> hace referencia a la distancia desde cada lado respecto al elemento colindante (o respecto a los bordes del documento). Véase el diagrama de la <a href="leccion09.html">leccion 9</a> para ver una imagen ilustrativa.<br><br>
+
+En un primer ejemplo, veremos cómo definir los márgenes del documento en sí, es decir, del elemento <tt>&lt;body&gt;</tt>. La imagen siguiente muestra cómo queremos que sean los márgenes de nuestras páginas.
+<img src="img/img013.png"><br>
+El código CSS necesario para esto es el siguiente:
+<pre>
+	body {
+	margin-top: 100px;
+	margin-right: 40px;
+	margin-bottom: 10px;
+	margin-left: 70px;
+	}
+</pre>
+O podrías elegir usar la versión combinada de margin, que queda como más elegante:
+<pre>
+	body {
+	margin: 100px 40px 10px 70px;
+	}
+</pre>
+<a href="ejemplos/ejemplo036.html">Ver Ejemplo</a><br>
+Se puede establecer los márgenes de casi todos los elementos del mismo modo. Por ejemplo, podemos elegir definir márgenes para todos los párrafos de texto marcados con el elemento&lt;p&gt;:
+<pre>
+	body {
+	margin: 100px 40px 10px 70px;
+	}
+	p {
+	margin: 5px 50px 5px 50px;
+	}
+</pre>
+<a href="ejemplos/ejemplo037.html">Ver Ejemplo</a>
+<h2>Establecer el relleno de un elemento</h2>
+La propiedad padding puede entenderse como "relleno". Esto tiene sentido puesto que el relleno (padding) no afecta a la distancia de un elemento respecto a otros elementos, sino que sólo define la distancia interior entre el borde y el contenido del elemento.
+El uso de la propiedad padding se puede ilustrar viendo un sencillo ejemplo en el que todos los títulos tienen diferentes colores de fondo:
+<pre>
+	h1 {
+	background: yellow;
+	}
+	h2 {
+	background: orange;
+	}
+</pre>
+<a href="ejemplos/ejemplo038.html">Ver Ejemplo</a><br>
+Al deninir el padding para los títulos, cambiamos la cantidad de "relleno" que habrá alrededor del texto en cada uno de ellos:
+<pre>
+	h1 {
+	background: yellow;
+	padding: 20px 20px 20px 80px;
+	}
+	h2 {
+	background: orange;
+	padding-left:120px;
+	}
+</pre>
+<a href="ejemplos/ejemplo039.html">Ver Ejemplo</a><br>
+<h2>Resumen</h2>
+Ya estás en el camino de dominar el modelo de caja en CSS. En la siguiente lección, examinaremos cómo establecer los bordes con colores diferentes y cómo dar forma a tus elementos.
+<hr>
+<a href="leccion09.html">Leccion Anterior</a><div align="center"><a href="../index.html">Index</a></div><div align="right"><a href="leccion11.html">Pagina Siguiente</a></div>
+</body>
+</html>
