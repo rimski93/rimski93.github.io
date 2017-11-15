@@ -1,0 +1,70 @@
+body {
+font-family:arial;
+color:Black;
+background-color:#ffffff;
+background-image:url("../img/body01.gif");
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+}
+
+strong {
+color:#F7931D;
+}
+
+h3 {
+color:#85980B;
+}
+
+#general{
+width:1024px;
+height:auto;
+margin:auto 10%;
+}
+
+#cap{
+width:1024px;
+height:100px;
+text-align:center;
+}
+
+#mprincipal {
+width:180px;
+height:390px;
+float:left;
+margin-top:10px;
+z-index:1;
+}
+
+#contingut{
+width:834px;
+height:500px;
+margin-left:190px;
+overflow:auto;
+}
+
+#contingutindex{
+width:824px;
+height:400px;
+margin-left:190px;
+overflow:auto;
+margin-top:10px;
+z-index:0;
+margin-left:auto;
+}
+
+#banners{
+width:800px;
+height:100px;
+margin-left:95px;
+margin-top:40px;
+text-align:center;
+}
+
+a{
+text-decoration:none;
+}
+
+#tequipaments td{
+width:200px;
+}
