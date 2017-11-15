@@ -1,0 +1,49 @@
+﻿<html>
+<head>
+<title>Aules</title>
+<link rel="stylesheet" href="img/estil01.css">
+<script src="js/jquery.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+function CrearTaula(){
+	var contingut=document.getElementById("taula")
+	var ol = document.createElement("ol")
+	ol.id="selectable"
+	ol.className="ui-selectable"
+	
+	for (var i=0; i<10; i++) ol.innerHTML+='<li class="ui-state-default ui-selectee">'+i+'</li>'
+	contingut.appendChild(ol)
+	
+}
+function test(){
+	contingut = document.getElementById("taula");
+	contingut.innerHTML =("hola");
+}
+</script>
+<div id="taula">
+
+<ol id="selectable">
+  <li class="ui-state-default">1</li>
+  <li class="ui-state-default">2</li>
+  <li class="ui-state-default">3</li>
+  <li class="ui-state-default">4</li>
+  <li class="ui-state-default">5</li>
+  <li class="ui-state-default">6</li>
+  <li class="ui-state-default">7</li>
+  <li class="ui-state-default">8</li>
+  <li class="ui-state-default">9</li>
+  <li class="ui-state-default">10</li>
+  <li class="ui-state-default">11</li>
+  <li class="ui-state-default">12</li>
+</ol>
+</div>
+
+
+<script type="text/javascript">
+javascript:CrearTaula();
+//javascript:test();
+</script>
+
+</body>
+</html>
