@@ -1,13 +1,12 @@
  <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<?php include("meta.html");?>
 		<!-- Titol -->
 		<title>Reserva d'Aules CRAI</title>
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="./css/stylelogin.css">
 		<!-- Icona --> 
-		<link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon" />
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 	</head>
 		
 		<div class="login">
