@@ -1,0 +1,1754 @@
+@import url("transicio2005.css");
+/*
+Universitat Rovira i Virgili. La universitat pÃºblica de Tarragona
+Can Antaviana, 2008
+
+-basic
+-layout
+-vincles
+-branding
+-nav_main
+-titular
+-nav_sub
+-estils houdini
+-contacte
+-content_sub
+-site_info
+-portada
+-subportades
+-localitzaciÃ³
+-honoris causa
+-#dones-quimiques
+-rÃ nquings
+-estudis
+*/
+
+/* Basic
+---------------------------------------------*/
+html {font-size: 100%;} /* WinIE text resize correction */
+body {
+    font-size: 1em;
+    font-family: Verdana, Arial, sans-serif;
+    text-align: center;
+    color: #333;
+    background: #fff url(img/bg_capsalera.jpg) repeat-x;
+    padding: 0;
+    margin: 0;
+}
+ul,ol,dl,fieldset {margin:0;padding:0;}
+img,abbr,acronym,fieldset {border: none;}   
+ul {list-style: none;}
+hr,
+.hide {display: none !important;}
+
+/*Clearfix*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {display:inline-block;}
+/* Hide from IE Mac \*/
+    .clearfix {display:block;}
+/* End hide from IE Mac */
+
+/*acc*/
+#acc {
+    position : absolute;
+    top : -9000px;
+    left : -9000px;
+    z-index : 1;
+}
+    #acc a:focus,
+    #acc a:active {
+        position : absolute;
+        top : 9010px;
+        left : 9010px;
+        background : #fff;
+        color : #333;
+        padding : 5px;
+        font-weight : bold;
+        border : 1px solid #600;
+        width : 10em;
+        z-index : 1;
+    }
+
+
+/* Layout
+---------------------------------------------*/
+/*3 columnes*/
+#container_main {
+    margin: 0 auto;
+    width: 835px;
+    padding: 0px 52px 0 53px;
+    text-align: left;
+    position: relative;
+    background: #fff;
+}
+        #nav_sub {
+            float: left;
+            width: 167px;
+            margin: 0 0 1.125em;
+        }
+        #container_sub_sub {
+            float: right;
+            width: 645px;
+            overflow: hidden;
+        }
+            #content_main {
+                float: left;
+                width: 459px;
+            }
+            #content_sub {
+                float: right;
+                width: 163px;
+                overflow: hidden;
+            }
+        #site_info {
+            clear: both;
+            background: url(img/bg_peu.jpg) repeat-x;
+        }
+            #site_info .wrapper {
+                background: url('img/bg_peu_central.jpg') repeat-x;
+                color: #fff;
+                margin: 0 auto;
+                padding: 80px 52px 20px 53px;
+                width: 835px;
+            }
+                #site_info a {
+                    color: #E8AA16;
+                    border: none;
+                }
+                #site_info a:hover {text-decoration: underline;}
+
+/*2 columnes*/
+.col2 #content_main {width: 100%;}
+.col2 #content_sub {display: none !important;}
+
+/*2 columnes b*/
+.col2b #nav_sub {display: none;}
+.col2b #container_sub_sub {
+    float: none;
+    width: 835px;
+}
+    .col2b #content_main {width: 649px;}
+
+/*2 columes mapaweb*/
+.col2mapa #nav_sub {display: none;}
+.col2mapa #container_sub_sub {
+    float: none;
+    width: 835px;
+}
+    .col2mapa #content_main {/*width: 649px;*/
+        width: 95%;
+    }
+    .col2mapa #content_main #col_a {
+        width:45%;
+        float:left;
+    }
+    .col2mapa #content_main #col_b {
+        width:45%;
+        float:right;
+    }
+    .col2mapa #content_sub {display:none;}
+
+/*Columna amb fotos*/
+#fotos {
+    width: 134px;
+    float: left;
+}
+#text {
+    width: 300px;
+    float: right;
+}
+.col2 #text {width: 487px;}
+
+/*honoris causa*/
+#honoris-causa #fitxa {
+    width: 311px;
+    float: left;
+}
+#honoris-causa #text {width: 311px;}
+
+/*#dones-quimiques */
+#dones-quimiques  #fitxa {
+    width: 311px;
+    float: left;
+    margin-bottom:10px;
+}
+#dones-quimiques  #text {width: 311px;}
+
+/*iframe*/
+.iframe #nav_sub {width: 100px;}
+.iframe #container_sub_sub {width: 735px;}
+.iframe_guia #container_sub_sub {width: 835px;}
+.iframe #content_main {width: 100%;}
+
+/*1 columna*/
+.col1 #nav_sub {display: none;}
+.col1 #container_sub_sub {width: 100%;}
+    .col1 #content_main {width: 100%;}
+    .col1 #content_sub {display: none;}
+
+/* Vincles
+---------------------------------------------*/
+/*General*/
+a:link {
+    color: #7f1730;
+    text-decoration: none;
+    border-bottom: 1px dotted #7f1730;
+}
+a:visited {
+    color: #666;
+    text-decoration: none;
+    border-bottom: 1px dotted #666;
+}
+a:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    background-color: #7f1730;
+}
+a:hover {
+    color: #7f1730;
+    text-decoration: none;
+    border-bottom: 1px solid #7f1730;
+}
+a:active {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    background-color: #7f1730;
+}
+/*Vincles externs*/
+a:link.external,
+a:visited.external {
+    background-image: url(img/icon_link_ext.gif);
+    background-position: right 50%;
+    background-repeat: no-repeat;
+    padding-right: 14px;
+}
+a:focus.external,
+a:focus.active {
+    background-image: url(img/icon_link_ext2.gif);
+    background-position: right 50%;
+    background-repeat: no-repeat;
+    padding-right: 14px;
+}
+a.img {
+    border:none;
+}
+/* Branding
+---------------------------------------------*/
+#branding {
+    position: relative;
+    margin: 0;
+/*  background: #fff;*/
+}
+#branding #urv{
+    padding:0;
+    margin: 18px 0 10px;
+    }
+    #branding #urv a{
+       float:right;
+       border:none;
+       margin-top:-6px;
+    }
+        #branding #urv a img {
+            display: block;
+        }
+    h1 {
+        margin:0;
+        float: left;
+        /*width: 209px;*/
+    }
+        h1 img {
+            margin-top: .2em;
+            display: block;
+        }
+        h1 a:link,
+        h1 a:visited {border-bottom: 0;}
+        h1 a:focus,
+        h1 a:active {
+            background: none;
+            outline: 1px dotted #000;
+        }
+/*eines*/
+#eines {
+    background-color: #E7E7E7;
+    width:100%;
+    padding: 5px 0;
+}
+    #eines ul {margin-left: 1em;}
+        #eines ul li {display: inline;}
+            #eines ul li a {
+                display: block;
+                float: left;
+                font-size: .6875em;
+                margin: .5em 1em 0 0;
+                background: url('img/separador_urv.gif') no-repeat scroll 0 50% transparent;
+                padding-left: 1em;
+            }
+            #eines a:link,
+            #eines a:visited {
+                border: none;
+                color: #95364F;
+            }
+            #eines a:hover {text-decoration:underline;border: 0;}
+            #eines a:focus,
+            #eines a:active {color: #fff;}
+
+            #eines #seu a {
+                display: block;
+                background: #A23A53 url('img/bt_seu.png') no-repeat;
+                width: 103px;
+                height: 20px;
+                color: #fff;
+                font-size: .625em;
+                text-align: center;
+                float: left;
+                line-height: 1.75;
+                margin-top: .4em;
+                padding-right:0;
+            }
+            #eines #seu a:hover {border: none;}
+            #eines ul#accessos li.first a{
+                 background:url('img/ico_2a_navegacio.png') no-repeat 0 50% transparent;
+                 padding-left: 1.5em;
+            }
+            #eines ul#idiomes li.first a{
+                 background:url('img/ico_idioma.png') no-repeat 0 50% transparent;
+                 padding-left: 1.8em;
+            }
+    /*cercador*/
+    #eines form {
+        text-align: right;
+        margin: .2em .5em 0 0;
+        padding-bottom: .2em;
+    }
+        #eines form label {display: none;}
+        #eines form input {
+            border: 1px solid #cdcdcd;
+            border-top-color: #8e8e8e;
+            border-bottom-color: #e3e3e3;
+            background: #fff url(img/bg_input.jpg) repeat-x;
+            width: 130px;
+            padding: .2em;
+            font-size: .6875em;
+        }
+            #eines form input.bt {
+                border: none;
+                background: none;
+                vertical-align: middle;
+                width: auto;
+                padding: 0;
+                margin-left: 6px;
+            }
+
+
+/* nav_main
+---------------------------------------------*/
+#nav_main {width: 100%; margin-bottom: .5em;}
+#portada #nav_main {margin-bottom: 1.2em;}
+    #nav_main ul li {
+        padding: 0;
+        margin: 0;
+    }
+        #nav_main ul li a {
+            display: block;
+            float: left;
+            position: relative;
+            overflow: hidden;
+            background: #ccc;
+            border: none;
+            margin: 0 7px 5px 0;
+            width: 203px;
+            height: 36px;
+            padding:0;
+        }
+        #nav_main ul li.last a {margin-right: 0;}
+            #nav_main ul li span {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-repeat: no-repeat;
+                background-image: url(img/menu_superior.jpg);
+                cursor: pointer; /*IE*/
+            }
+            /*Universitat*/
+            #nav_main ul li#universitat a:hover span,
+            #nav_main ul li#universitat a:focus span {background-position: 0 -39px;}
+            #nav_main ul li#universitat a:active span {background-position: 0 -78px;}
+            /*Estudis*/
+            #nav_main ul li#estudis span {background-position: -211px 0;}
+            #nav_main ul li#estudis a:hover span,
+            #nav_main ul li#estudis a:focus span {background-position: -211px -39px;}
+            #nav_main ul li#estudis a:active span {background-position: -211px -78px;}
+            /*Recerca*/
+            #nav_main ul li#recerca span {background-position: -422px -0;}
+            #nav_main ul li#recerca a:hover span,
+            #nav_main ul li#recerca a:focus span {background-position: -422px -39px;}
+            #nav_main ul li#recerca a:active span {background-position: -422px -78px;}
+            /*Entorn*/
+            #nav_main ul li#entorn span {background-position: -632px -0;}
+            #nav_main ul li#entorn a:hover span,
+            #nav_main ul li#entorn a:focus span {background-position: -632px -39px;}
+            #nav_main ul li#entorn a:active span {background-position: -632px -78px;}
+
+#molladepa {
+    font-size: .75em;
+    padding: 0 0 0 20px;
+    margin-bottom: 1.5em;
+    background: url(img/kland_molladepa.gif) 0 50% no-repeat;
+}
+    #molladepa a:link,
+    #molladepa a:visited {
+        border-bottom: 0;
+        color: #7f1730;
+    }
+    #molladepa a:focus,
+    #molladepa a:active {color: #fff;}
+    #molladepa a:hover {border-bottom: 1px dotted #7f1730;}
+
+
+/* titular
+---------------------------------------------*/
+#titular {
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 1.125em;
+}
+    #titular p {
+        font-size: 1em;
+        color: #fff;
+        margin: 0 0 1.125em;
+        padding: .4em 1em;
+        background: #9e344e url(img/capint_bg_standart.jpg) repeat-x;
+    }
+    #titular h2 {
+        font-size: 1.375em;
+        font-weight: normal;
+        color: #333;
+        margin: 0 0 .818em;
+        font-family: Arial, Verdana, sans-serif;
+    }
+
+/* nav_sub
+---------------------------------------------*/
+#nav_sub ul {
+    background: #efd0d8;
+    margin: 0 0 1.125em;
+}
+    /*#nav_sub ul li {display: inline;}*/
+        #nav_sub ul li a {
+            display: block;
+            font-size: .75em;
+            padding: .5em 1em;
+            border-bottom: 1px solid #fff;
+        }
+        #nav_sub ul li.current a {
+            color: #fff;
+            background: #9f344e;
+        }
+        #nav_sub ul li.current a.first {
+            background-repeat: no-repeat;
+            background-image: url(img/bg_current_top.gif);
+        }
+        #nav_sub ul li:last-child a {
+            border-bottom: none;
+        }
+        #nav_sub ul a:link,
+        #nav_sub ul a:visited {color: #333;}
+        #nav_sub ul a:hover {text-decoration: underline;}
+        #nav_sub ul a:focus,
+        #nav_sub ul a:active {
+            background: none;
+            outline: 1px dotted #000;
+        }
+        #nav_sub ul li.separador {border-top: 4px solid #ccc;}
+        #nav_sub ul li span {
+            display: block;
+            font-size: .75em;
+            font-weight: bold;
+            padding: .5em 10px;
+        }
+        /*submenÃº*/
+        #nav_sub ul li ul {margin: 0;}
+        #nav_sub ul li li a {
+            color: #fff;
+            background: #d27a90;
+        }
+            #nav_sub ul li li a.first {
+                background-image: url(img/bg_current_top.gif);
+                background-repeat: no-repeat;
+            }
+            #nav_sub ul li ul {border: 1px solid #d27b90;}
+                #nav_sub ul li ul li a,
+                #nav_sub ul li.current ul li a {
+                    font-size: .625em;
+                    border-bottom: 1px solid #f2d7de;
+                    background: #fff url(img/kland_submenu.gif) 11px 6px no-repeat;
+                    padding: 4px 10px 4px 24px;
+                }
+                #nav_sub ul li ul li:last-child a {border-bottom: none;}
+                #nav_sub ul li ul li a:link,
+                #nav_sub ul li ul li a:visited {color: #333;}
+
+
+/* Estils Houdini
+---------------------------------------------*/
+/*imatge capÃ§alera*/
+img#fotoSuperior {margin: 0 0 1.125em;}
+/*tÃ­tols*/
+#content_main h3 {
+    font-size: .75em;
+    margin: 0 0 1.5em;
+    padding: .5em 1em;
+    background: #efd0d8;
+}
+    #container_main #container_sub h3.contacte {
+        color: #fff;
+        background: #933f53;
+        margin: 0 0 .166em;
+    }
+    #container_main #container_sub h3.generic {
+        color: #333;
+        background: #ccc;
+    }
+#content_main h4 {
+    font-size: .75em;
+    margin: 0 0 1.5em;
+    background: url(img/kland_1.png) 0 .2em no-repeat;
+    padding: .2em 0 .2em 22px;
+}
+* html #content_main h4 {background-image:url(img/kland_1.gif);}
+#content_main h5 {
+    font-size: .75em;
+    margin: 0 0 1.5em;
+    color: #666;
+}
+#content_main h6 {
+    font-size: .75em;
+    margin: 0 0 1.5em;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/*text*/
+#content_main p {
+    font-size: .75em;
+    margin: 0 0 1.5em;
+    line-height: 1.5em;
+}
+#content_main p.intro {font-weight: bold;
+}
+#content_main span.pujar {
+    border-top: 1px solid #ccc;
+    padding: .5em 0;
+    display: block;
+    text-align: right;
+}
+    #content_main span.pujar a {
+        border-bottom: none;
+        text-decoration: none;
+    }
+
+/*Llistes*/
+#content_main ul,
+#content_main ol {
+    font-size: .75em;
+    margin: 0 0 1.5em 22px;
+    line-height: 1.5em;
+}
+    #content_main ul ul,
+    #content_main ol ol {
+        font-size: 1em;
+        margin: 0;
+    }
+        #content_main ul ul ul,
+        #content_main ol ol ol {font-size: .916em;}
+
+    /*Llista ordenada*/
+    #content_main ol {padding-left: 1.8em;}
+
+    /*Llista desordenada*/
+    #content_main ul li {
+        background: url(img/kland_llistat1.png) 0 6px no-repeat;
+        padding: .3em 0 .3em 18px;
+    }
+        * html #content_main ul li {background-image: url(img/kland_llistat1.gif);}
+        #content_main ul li li {
+            background: url(img/kland_2.gif) 0 6px no-repeat;
+            padding: .2em 0 .2em 14px;
+        }
+            #content_main ul li li li {background: url(img/kland_3.png) 0 6px no-repeat;}
+
+    /*Llistat amb fons*/
+    #content_main ul.fons {
+        background-color: #efd0d8;
+        padding: 1em;
+        margin-left: 0;
+    }
+
+    /*Llistat a dues columnes*/
+    #content_main ul.duesCol {margin-left: 0;}
+    #content_main ul.duesCol li {
+        width: 40%;
+        margin-right: 10px;
+        float: left;
+    }
+        #content_main ul.duesCol li li {
+            width: auto;
+            background: url(img/kland_2.gif) 0 7px no-repeat;
+            padding-left: 15px;
+            float: none;
+        }
+    /*Llista tipus A, B i contacte*/
+    #content_main ul.tipusA,
+    #content_main ul.tipusB,
+    #container_sub ul.contacte,
+    #sub #content_sub ul.contacte {
+        border: 1px solid #d27b91;
+        background: #efd0d8;
+        position: relative;
+        padding: .5em 1em;
+        margin-left: 0;
+    }
+        #content_main ul.tipusA div,
+        #content_main ul.tipusB div,
+        #container_sub ul.contacte div {
+            position: absolute;
+            width: 645px;
+            height: 5px;
+            background-repeat: no-repeat;
+        }
+            #content_main div.t {
+                left: -1px;
+                top: -1px;
+                background-image: url(img/box_big_c_t.gif);
+            }
+            #content_main div.b {
+                left: -1px;
+                bottom: -1px;
+                background-image: url(img/box_big_c_b.gif);
+            }
+            #content_main ul.tipusA li,
+            #container_sub ul.contacte li {
+                background: url(img/kland_2.gif) 0 7px no-repeat;
+                padding: .3em 0 .3em 15px;
+            }
+            #container_sub ul.contacte li {border-bottom: 1px solid #e6b7c3;display: block;}
+                #container_sub ul.contacte li.last {border-bottom: none;}
+            #container_sub_sub ul li.nom,
+            #sub #content_sub ul li.nom {background-image: url(img/kland_gent_standart.gif);padding-left: 22px;}
+            #container_sub_sub ul li.adr,
+            #sub #content_sub ul li.adr {background-image: url(img/kland_casa_standart.gif);padding-left: 22px;}
+            #container_sub_sub ul li.tel,
+            #sub #content_sub ul li.tel {background-image: url(img/kland_telefon_standart.gif);padding-left: 22px;background-position: 4px 6px;}
+            #container_sub_sub ul li.email,
+            #sub #content_sub ul li.email {background-image: url(img/kland_mail_standart.gif);padding-left: 22px;}
+            #container_sub_sub ul li.fax,
+            #sub #content_sub ul li.fax {background-image: url(img/kland_fax_standart.gif);padding-left: 22px;}
+            #container_sub_sub ul li.video,
+            #sub #content_sub ul li.video {background-image: url(img/kland_video_contacte.gif);padding-left: 22px;}
+            .col3 #content_main div.t {background-image: url(img/box_mid_c_t.gif); width: 459px;}
+            .col3 #content_main div.b {background-image: url(img/box_mid_c_b.gif); width: 459px;}
+            #content_main #text div.t {background-image: url(img/box_mid2_c_t.gif); width: 300px;}
+            #content_main #text div.b {background-image: url(img/box_mid2_c_b.gif); width: 300px;}
+            .col2 #content_main #text div.t {background-image: url(img/box_mid3_c_t.gif); width: 487px;}
+            .col2 #content_main #text div.b {background-image: url(img/box_mid3_c_b.gif); width: 487px;}
+            /*Llista tipus B*/
+            #content_main ul.tipusB  {
+                background: none;
+                border-color: #999;
+            }
+                #content_main ul.tipusB div.t {background-image: url(img/box_big_b_t.gif);}
+                #content_main ul.tipusB div.b {background-image: url(img/box_big_b_b.gif);}
+                #content_main ul.tipusB li {
+                    background: url(img/kland_1.png) 0 5px no-repeat;
+                    padding: .3em 0 .3em 23px;
+                }
+                .col3 #content_main ul.tipusB div.t {background-image: url(img/box_mid_b_t.gif);}
+                .col3 #content_main ul.tipusB div.b {background-image: url(img/box_mid_b_b.gif);}
+                #content_main #text ul.tipusB div.t {background-image: url(img/box_mid2_b_t.gif);}
+                #content_main #text ul.tipusB div.b {background-image: url(img/box_mid2_b_b.gif);}
+                .col2 #content_main #text ul.tipusB div.t {background-image: url(img/box_mid3_b_t.gif);}
+                .col2 #content_main #text ul.tipusB div.b {background-image: url(img/box_mid3_b_b.gif);}
+/*tabs*/
+#content_main ul#tabs {
+    margin-left: 0;
+    border-bottom: 1px solid #e2e2e2;
+}
+    #content_main ul#tabs li {
+        float: left;
+        background: #e2e2e2 url(img/tab_t.jpg) no-repeat;
+        width: 95px; /*100px*/
+        height: 3em;
+        padding: 5px 10px 2px;
+        margin: 0 3px 0 0;
+        font-size: .916em;
+        text-align: center;
+        line-height: 1.3em;
+        bottom: -1px;
+        position: relative;
+    }
+        #content_main ul#tabs li.active {
+            background: url(img/tab_t_a.jpg) no-repeat;
+            font-weight: bold;
+            border-bottom: 1px solid #fff;
+        }
+        #content_main ul#tabs li a:link,
+        #content_main ul#tabs li a:visited {border: none;}
+        #content_main ul#tabs li a:hover {border-bottom: 1px dotted;}
+
+/*Text + imatge*/
+div.txtImgEsq img {
+    float: left;
+    margin: 0 1.125em 1.125em 0;
+}
+div.txtImgDr img {
+    float: right;
+    margin: 0 0 1.125em 1.125em;
+}
+
+/*Text + imatge DESTACAT */
+div.txtImgDrDest,
+div.txtImgEsqDest {
+    background: #8F3247;
+    color: white;
+    clear: both;
+    margin-bottom: 20px;
+}
+div.txtImgDrDest p,
+div.txtImgEsqDest p{
+    padding: 10px;
+}
+
+div.txtImgEsqDest img {
+    float: left;
+    margin: 0 1.125em 0 0;
+    padding: 0;
+}
+div.txtImgDrDest img {
+    float: right;
+    margin: 0 0 0 1.125em;
+    padding: 0;
+}
+
+/*Text destacat*/
+div.destacat {
+    border: 1px solid #d37c91;
+    margin: 0 0 2em;
+    position: relative;
+    background: #faf6f7;
+}
+    div.destacat div {
+        position: absolute;
+        width: 645px;
+        height: 5px;
+        background-repeat: no-repeat;
+    }
+        #content_main div.destacat div.t {background-image: url(img/box_big_a_t.gif);}
+        #content_main div.destacat div.b {background-image: url(img/box_big_a_b.gif);}
+        div.destacat div.ql {
+            width: 44px;
+            height: 33px;
+            left: 10px;
+            top: -10px;
+            background: url(img/ico_quote1.png) no-repeat;
+        }
+        div.destacat div.qr {
+            width: 44px;
+            height: 33px;
+            right: 10px;
+            bottom: -22px;
+            background: url(img/ico_quote2.png) no-repeat;
+        }
+        .col3 #content_main div.destacat div.t {background-image: url(img/box_mid_a_t.gif);}
+        .col3 #content_main div.destacat div.b {background-image: url(img/box_mid_a_b.gif);}
+        #content_main #text div.destacat {width: 298px;}
+        #content_main #text div.destacat div.t {background-image: url(img/box_mid2_a_t.gif); width: 300px;}
+        #content_main #text div.destacat div.b {background-image: url(img/box_mid2_a_b.gif); width: 300px;}
+        .col2 #content_main #text div.destacat {width: 485px;}
+        .col2 #content_main #text div.destacat div.t {background-image: url(img/box_mid3_a_t.gif); width: 487px;}
+        .col2 #content_main #text div.destacat div.b {background-image: url(img/box_mid3_a_b.gif); width: 487px;}
+    #content_main div.destacat p,
+    #content_sub div.destacat p {
+        margin: 0;
+        padding: 30px 10px 20px;
+        font-size: .8125em;
+        font-family: Arial, Helvetica, Verdana, sans-serif;
+        color: #933f53;
+    }
+
+/*Text amb destacat dreta/esquerra*/
+div.destacatDreta,
+div.destacatEsq {margin: 1.125em 0;}
+#content_main div div.destacat {width: 161px;}
+    #content_main div.destacatEsq div.destacat {
+        float: left;
+        margin: 0 1.125em 1.125em 0;
+    }
+    #content_main div.destacatDreta div.destacat {
+        float: right;
+        margin: 0  0 1.125em 1.125em;
+    }
+        #content_main div.destacatEsq div.destacat div.t,
+        #content_main div.destacatDreta div.destacat div.t {
+            width: 163px;
+            background: url(img/box_small_a_t.gif) no-repeat;
+        }
+        #content_main div.destacatEsq div.destacat div.b,
+        #content_main div.destacatDreta div.destacat div.b {
+            width: 163px;
+            background: url(img/box_small_a_b.gif) 0 100% no-repeat;
+        }
+
+/*Taula*/
+#content_main table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: .25em;
+    margin: 0 0 1.125em 0;
+}
+    #content_main table caption {display: none;}
+    #content_main table td,
+    #content_main table th {
+        font-size: .6875em;
+        padding: .2em .4em;
+    }
+    #content_main table th {background: #ccc;}
+    #content_main table td {background: #ebebeb;}
+        #content_main table td p,
+        #content_main table td ul,
+        #content_main table td ol {font-size: 1em;}
+        #content_main table td p{margin:0;}
+
+        #content_main table.taulafonsblanc td,
+        #content_main table.taulafonsblanc th{
+                background: #fff;
+        }
+        #content_main table.taulafonsblanc td{
+            text-align: center;
+        }
+    #content_main table td.centrar{
+    text-align:center;
+    }
+#content_main table.logos {
+    border-spacing: 0em;
+}
+#content_main table.logos td {
+    padding: 2em 1em;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+#content_main table.logos td a {border:none;}
+
+#content_main table.logos td a.external,
+#content_main table.logos td a.external:link,
+#content_main table.logos td a.external:visited{
+    background: none;
+}
+/*Columna fotos*/
+p.peuFoto {
+    font-size: .625em;
+    font-style: italic;
+    margin: .45em 0 1.8em;
+}
+
+/*paginaciÃ³*/
+#pag {
+    position: relative;
+    margin: 0 0 1.125em;
+}
+    #pag p {
+        float: left;
+        margin: 0;
+        font-size: .6875em;
+    }
+        #pag p.anterior {
+            margin-right: 2em;
+        }
+        #pag p.seguent {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    #pag ul {
+        float: left;
+        margin: 0 0 0 6em;
+    }
+        #pag ul li {
+            border: 1px solid #ddd;
+            background: #f0f0f0;
+            background: none;
+            padding: 2px 6px;
+            margin: 0 2px 0 0;
+            font-size: .916em;
+            float: left;
+            text-align: center;
+            line-height: 1.2em;
+        }
+            #pag ul li.actual {
+                background: #ccc;
+            }
+            #pag ul li a {
+                border: none;
+            }
+
+/* contacte
+---------------------------------------------*/
+#content_main #contacte {
+    background: url(img/missatge_enviat_ok.jpg) no-repeat;
+    padding-left: 100px;
+    margin: 0 auto 1.125em;
+    width: 400px;
+}
+    #content_main #contacte h3 {
+        font-weight: normal;
+        font-size: 1.3125em;
+        background: none;
+        padding: 0;
+        color: #216824;
+        margin: 0 0 .5em;
+    }
+    #content_main #contacte p {margin: 0 0 .5em;}
+    #content_main #contacte.error {background-image: url(img/missatge_enviat_error.jpg);}
+    #content_main #contacte.error h3 {color: #ad231c;}
+
+/* content_sub
+---------------------------------------------*/
+#content_sub div.t {width: 163px; background: url(img/box_small_a_t.gif) no-repeat; left: -1px; top: -1px;}
+#content_sub div.b {width: 163px; background: url(img/box_small_a_b.gif) 0 100% no-repeat; left: -1px; bottom: -1px}
+#content_sub h3 {
+    color: #fff;
+    background: #933f53;
+    font-size: .75em;
+    padding: .5em 1em;
+    margin: 0 0 .166em;
+}
+#content_sub img {
+    width: 163px;
+    margin: 0 0 1.5em;
+}
+
+    #content_sub a img {
+        width: 163px;
+        margin: 0;
+    }
+#content_sub p {
+    font-size: .75em;
+    margin: 0 0 1.5em;
+    line-height: 1.5em;
+}
+#content_sub ul {
+    background: #efd0d8;
+    margin: 0 0 1.125em;
+    border: 1px solid #d37c91;
+    position: relative;
+}
+    #content_sub ul div {
+        position: absolute;
+        width: 163px;
+        height: 5px;
+        background-repeat: no-repeat;
+    }
+    #content_sub ul div.t {background-image: url(img/box_small_c_t.gif);}
+    #content_sub ul div.b {background-image: url(img/box_small_c_b.gif);}
+    #content_sub ul li {
+        padding: .5em 1em;
+        margin: 0 .5em;
+        border-bottom: 1px solid #e6b7c3;
+        font-size: .75em;
+        background: 0 8px no-repeat;
+    }
+        #content_sub ul li.last a {border-bottom: none;}
+        #content_sub ul a:link,
+        #content_sub ul a:visited {color: #333;border-bottom: none;}
+        #content_sub ul a:hover {text-decoration: underline;}
+        #content_sub ul a:focus,
+        #content_sub ul a:active {
+            background: none;
+            outline: 1px dotted #000;
+        }
+div.comp-vertical a {
+    border: none;
+    background: none;
+}
+#container_sub_sub #content_sub ul li.email {font-size: .625em;}
+
+/* site_info
+---------------------------------------------*/
+#site_info p,
+#site_info ul {
+    font-size: .625em;
+    line-height: 1.5em;
+    margin: 0;
+}
+div#altres {text-align: center;}
+    div#altres p,
+    div#altres ul {margin: 1em 0;}
+        div#altres li {
+            display: inline;
+            border-right: 2px solid #D2A0AC;
+            padding: 0 1em 0 0;
+            margin: 0 .5em 0 0;
+        }
+            div#altres li:last-child {
+                border-right: none;
+                margin-right: 0;
+            }
+
+/* Portada
+---------------------------------------------*/
+/*layout*/
+#portada #container_sub_sub,
+#portada #content_main {
+    float: none;
+    width: 835px;
+}
+/*flash*/
+#flash_portada {margin: 0 0 1.125em;}
+#flash_portada * {margin: 0;}
+#flash_portada img.left {float:left;}
+#flash_portada img.right {float:right;}
+#flash_portada a {border: none;}
+/*caixes*/
+div.box {
+    width: 259px;
+    float: left;
+    margin-right: 29px;
+}
+    div.box h2 {margin: 0;}
+/*Perfils*/
+div#perfils {
+    background: #e1e1e1 url(img/caixa_perfils_b.jpg) 0 100% no-repeat;
+    padding-bottom: 10px;
+    margin-bottom: 1.125em;
+}
+div#perfils ul {margin: 0 20px;}
+    div#perfils ul li {
+        background: url(img/kland_molladepa.gif) 0 .75em no-repeat;
+        border-bottom: 1px solid #fff;
+        padding: .5em 0 .5em 25px;
+    }
+        div#perfils ul li a:link,
+        div#perfils ul li a:visited {
+            color: #333;
+            border: none;
+        }
+        div#perfils ul li a:hover {border-bottom: 1px dotted #333;}
+        div#perfils ul li a:focus,
+        div#perfils ul li a:active {color: #fff;}
+/*NotÃ­cies i Agenda*/
+div#noticies {
+    border-right: 1px solid #ccc;
+    margin-bottom: 1.125em;
+    padding-right: 14px;
+    margin-right: 14px;
+}
+div#noticies ul,
+div#agenda ul {margin: 0;}
+    div#noticies ul li,
+    div#agenda ul li {
+        background: none;
+        padding: .8em 0;
+        border-bottom: 1px solid #ccc;
+    }
+        div#noticies ul li p,
+        div#agenda ul li p {
+            font-size: 1em;
+            margin: 0 0 .5em;
+            font-weight: bold;
+        }
+            div#noticies ul li p a,
+            div#agenda ul li p a {
+                font-weight: normal;
+            }
+        div#noticies ul li h3,
+        div#agenda ul li h3 {
+            padding: 0;
+            font-size: 1.25em;
+            font-weight: normal;
+            margin: 0;
+            background: none;
+        }
+            div#noticies ul li h3 a:link,
+            div#agenda ul li h3 a:link {
+                color: #333;
+                border: none;
+            }
+            div#noticies ul li h3 a:hover,
+            div#agenda ul li h3 a:hover {
+                border-bottom: 1px dotted #7f1730;
+                color: #7f1730;
+            }
+            div#noticies ul li h3 a:active,
+            div#agenda ul li h3 a:active,
+            div#noticies ul li h3 a:focus,
+            div#agenda ul li h3 a:focus {color: #fff;}
+div#noticies p.bt,
+div#agenda p.bt {
+    float: left;
+    margin: 1em 1em 0 0;
+}
+    div#noticies p.bt a,
+    div#agenda p.bt a {
+        border: none;
+        background: none;
+    }
+    div#noticies p.bt a:focus,
+    div#agenda p.bt a:focus,
+    div#noticies p.bt a:active,
+    div#agenda p.bt a:active {outline: 1px dotted #000;}
+/*Agenda*/
+div#agenda {
+    width: 258px;
+    margin: 0 0 1.125em;
+}
+/*Dreceres i Destaquem*/
+div.col {
+    float: left;
+    width: 265px;
+    margin: 0;
+    border-bottom: 1px solid #d78fa5;
+}
+div.a {margin-left: 20px;}
+div#dreceres div.b,
+div#destaquem div.b {background: none;}
+div.c {margin-right: 20px;}
+    #portada div.col ul {margin: 0 10px 2em;}
+
+/*Dreceres*/
+div#dreceres {
+    margin: 0 0 1.125em;
+    background: #f5e5e8 url(img/caixa_dreceres_b.jpg) 0 100% no-repeat;
+    clear: left;
+    padding-bottom: 65px;
+    position: relative;
+}
+    div#dreceres h2 {margin: 0;}
+        div#dreceres ul li {
+            padding: 0 0 0 20px;
+            margin-bottom: 5px;
+            background: url(img/kland_portada_dreceres.jpg) 0 .3em no-repeat;
+        }
+            div#dreceres ul li a:link {
+                color: #333;
+                border: none;
+            }
+            div#dreceres ul li a:hover {
+                border-bottom: 1px dotted #7f1730;
+                color: #7f1730;
+            }
+            div#dreceres ul li a:active,
+            div#dreceres ul li a:focus {color: #fff;}
+    div#dreceres p {
+        background: url(img/ico_recull_premsa.jpg) no-repeat;
+        position: absolute;
+        right: 200px;
+        bottom: 15px;
+        margin: 0 20px 0 0;
+        padding: 10px 0 10px 55px;
+    }
+        div#dreceres p a {
+            border: none;
+            color: #333;
+        }
+
+    div#dreceres p.guia {
+        background: none;
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        margin: 0 20px 0 0;
+        padding: 10px 0 10px 55px;
+    }
+        div#dreceres p.guia a {
+            border: none;
+            color: #333;
+        }
+
+/*Destaquem*/
+div#destaquem {
+    margin: 0 0 1.125em;
+    background: #e1e1e1 url(img/caixa_destaquem_b.jpg) 0 100% no-repeat;
+    padding-bottom: 10px;
+    clear: left;
+}
+    div#destaquem h2 {margin: 0;}
+    div#destaquem ul#bann {
+        width: 835px;
+        margin: 0 0 1.125em;
+    }
+        div#destaquem ul#bann li {
+            width: auto;
+            background: none;
+            margin: 0 10px 10px 22px;
+            padding: 0;
+            display: inline;
+        }
+            div#destaquem ul#bann li a {
+                background: none;
+                border: none;
+                padding: 0;
+            }
+    div#destaquem .col {border: none;}
+        div#destaquem .col ul {margin-left: 0;}
+        div#destaquem ul li {
+            background: none;
+            padding: 0 0 0 22px;
+            margin-bottom: 5px;
+            background: url(img/kland_portada_destaquem.jpg) 0 .3em no-repeat;
+            float: left;
+            width: 212px;
+        }
+                div#destaquem ul li a,
+                div#destaquem a,
+                div#destaquem a:active,
+                div#destaquem a:focus {margin: 0;border: none;}
+                div#destaquem ul li a:active,
+                div#destaquem ul li a:focus {background-color: #7f1730;}
+        div#destaquem .col img{margin-left: 2px;}
+/*logos*/
+ul#logos {
+    text-align:center;
+    margin: 0;
+}
+    #logos li a {
+        background: none;
+        border: none;
+        margin: 0 15px;
+    }
+    #logos li a img {
+        vertical-align: middle;
+        margin-bottom:1em;
+    }
+
+#content_main ul.logos {
+    /*text-align:center;*/
+    padding:0;
+    margin:0;
+}
+#content_main ul.logos li{
+    display: inline;
+    padding: 0;
+    background: none;
+    float: left;
+    margin: 0 15px;
+}
+    #content_main ul.logos li a {
+        background: none;
+        border: none;
+    }
+
+#portada ul#logos li,
+ul#logos li{
+    display: inline;
+    padding: 0;
+    background: none;
+}
+    #portada ul#logos li a {
+        display: block;
+        float: left;
+        background: none;
+        border: none;
+        margin: 0 15px;
+    }
+    #portada  ul#logos li a:active,
+    #portada  ul#logos li a:focus,
+    ul#logos li a:active,
+    ul#logos li a:focus {outline: 1px dotted #000;}
+
+/*site_info*/
+#portada #site_info {
+    background: url('img/bg_peu_urv.jpg') 0 100% repeat-x;
+}
+#portada #site_info .wrapper {
+    background: #fff url(img/bg-footer.jpg) 50% 100% no-repeat;
+    height: 356px;
+}
+    /*contacte*/
+    #portada #site_info #contacte {
+        text-align: left;
+        width: 260px;
+        float: left;
+        margin-top: 240px;
+    }
+        #portada #site_info #contacte p {font-size: .75em;}
+        #portada #site_info #contacte p.tel {font-size: 1.125em;}
+    /*varis i info*/
+    #portada #site_info ul {
+        width: 200px;
+        padding: 62px 20px 0 20px;
+        float: left;
+        border-left: 1px solid #fff;
+        margin-top: 240px;
+    }
+    #portada #site_info ul#info {
+        width: 310px;
+        padding-right: 0;
+    }
+        #portada #site_info ul li {
+            float: left;
+            background: url(img/kland_portada_peu.gif) 0 .4em no-repeat;
+            margin-right: 1em;
+            padding: .2em 0 .2em 18px;
+            font-size: 1.2em;
+        }
+    /*copy*/
+    #portada #site_info p#copy {
+        clear: left;
+        text-align: center;
+        padding: 36px 0 0;
+        margin-bottom: 1em;
+    }
+
+/* Subportada
+---------------------------------------------*/
+/*layout*/
+#sub #nav_sub {display: none;}
+#sub #container_sub {
+    background: #f3dde3;
+    margin: 0 0 1.125em;
+}
+    #sub #container_sub_sub {
+        width: 787px;
+        padding: 24px;
+        float: none;
+    }
+        #sub #content_main {width: 243px;}
+        #sub #content_sub {width: 516px;}
+/*contingut*/
+#sub #titular {
+    border-bottom: none;
+    margin: 0 0 .25em;
+    line-height: 0;
+}
+    #sub #titular h2 {
+        background: #a03650 url(img/bg_cap_standart.jpg) repeat-x;
+        color: #fff;
+        font-size: 1.75em;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: .6em 1em;
+        margin: 0 0 .143em;
+        line-height: 1em;
+    }
+#sub #container_main h3 {
+    color: #fff;
+    background: none;
+    color: #933f53;
+    font-size: .875em;
+    padding: .5em 0;
+    margin: 0 0 1.286em 0;
+}
+#sub #content_sub p {
+    font-size: .75em;
+    margin: 0 0 .75em;
+    line-height: 1.5em;
+}
+#sub #content_main img {margin: 0 0 1.125em 0;}
+#sub.b #container_sub ul.contacte {width: 433px;}
+    #sub.b #container_sub ul.contacte div.t {background-image: url(img/box_mid_c_t.gif);}
+    #sub.b #container_sub ul.contacte div.b {background-image: url(img/box_mid_c_b.gif);}
+#sub #content_sub ul {
+    border: none;
+    background: none;
+    margin: 0 0 1.125em;
+    overflow: hidden;
+}
+    #sub #content_sub ul li {
+        border: none;
+        margin: 0;
+        padding: .5em 0 .5em 20px;
+        background: url(img/kland_llistat1.png) 0 .75em no-repeat;
+    }
+/*llista menÃº*/
+#sub ul.menu {
+    border: none;
+    background: none;
+    margin: 0 0 1.125em;
+    overflow: hidden;
+}
+    #sub #container_main ul.menu li {
+        display: inline;
+        font-size: 1em;
+        border-bottom: none;
+        margin: 0;
+        padding: 0;
+        background: none;
+    }
+        #sub ul.menu li a {
+            background: #fff url(img/kland_portada_standart.gif) 8px 7px no-repeat;
+            border: none;
+            margin: 0 18px .5em 0;
+            padding: .5em 13px .5em 30px;
+            font-size: .8125em;
+            float: left;
+            width: 206px;
+        }
+        #sub ul.menu li a:focus,
+        #sub ul.menu li a:active {
+            outline: 1px dotted #000;
+            background-image: none;
+        }
+        #sub ul.menu li a.odd {margin-right: 0;}
+/*vcard*/
+#sub div.vcard {margin: 0 0 1.125em;}
+    #sub div.vcard p {
+        padding-left: 23px;
+        background: 0 2px no-repeat;
+    }
+        #sub div.vcard p.fn {background-image: url(img/kland_gent_standart.gif);}
+        #sub div.vcard p.adr {background-image: url(img/kland_casa_standart.gif);}
+        #sub div.vcard p.equip {background-image: url(img/kland_gent_standart.gif);}
+        #sub div.vcard p.arribar {background-image: url(img/kland_transport_standart.gif);}
+        #sub div.vcard p.tel {background: url(img/kland_telefon_standart.gif) 3px 50% no-repeat;}
+        #sub div.vcard p.email {background-image: url(img/kland_mail_standart.gif);}
+        #sub div.vcard p.video {background-image: url(img/kland_video_contacte.gif);}
+/*subportada B*/
+#sub.b #content_main {width: 326px;}
+#sub.b #content_sub {width: 163px;}
+#sub.b #content_sub div.t {background-image: url(img/box_small_b_t.gif);}
+#sub.b #content_sub div.b {background-image: url(img/box_small_b_b.gif);}
+#content_sub div.b {width: 163px; background: url(img/box_small_a_b.gif) 0 100% no-repeat;}
+#sub.b #content_sub ul, #sub.c #content_sub ul {overflow: visible;}
+#sub.b #nav_sub {
+    display: block;
+    width: 249px;
+    margin-right: 31px;
+}
+    #sub.b #nav_sub ul {
+        background-color: #fff;
+        border: none;
+    }
+        #sub.b #nav_sub ul a {
+            border-bottom: 1px solid #ccc;
+            background: url(img/kland_1.png) 8px 7px no-repeat;
+            padding: .5em 15px .5em 32px;
+            font-size: .8125em;
+        }
+        * html #sub.b #nav_sub ul a {background-image: url(img/kland_1.gif);}
+            #sub.b #nav_sub ul a:focus,
+            #sub.b #nav_sub ul a:active {outline: 1px dotted #000;}
+            #sub.b #nav_sub ul li.last a {border-bottom: none;}
+            #sub.b #nav_sub ul li.separa a {border-bottom: 4px solid #ccc;}
+            #sub.b #nav_sub ul li.current a {color: #333;}
+            #sub.b #nav_sub ul li span {
+                display: block;
+                font-weight: bold;
+                font-size: .875em;
+                padding: .5em 10px;
+            }
+
+            #sub.b #nav_sub ul ul a {
+                background: url(img/kland_2.png) 0 7px no-repeat;
+                padding: .4em 10px .4em 18px;
+                margin: 0 10px .4em 32px;
+                font-size: .75em;
+            }
+            * html #sub.b #nav_sub ul ul a {background-image: url(img/kland_2.gif);}
+
+#sub.b #content_sub ul,
+#sub.c #content_sub ul {
+    border: 1px solid #d37c91;
+    background: #faf6f7;
+}
+    #sub.b #content_sub ul li,
+    #sub.c #content_sub ul li {
+        padding: .3em .5em;
+        margin: 0 .5em;
+        border-bottom: 1px solid #e6b7c3;
+        font-size: .75em;
+        display: block;
+        background: none;
+    }
+        #sub.b #content_sub ul li a,
+        #sub.c #content_sub ul li a {
+            width: auto;
+            padding: 0;
+            margin: 0;
+            background-image: none;
+            float: none;
+        }
+        #sub.b #content_sub ul li.last,
+        #sub.c #content_sub ul li.last {border-bottom: none;}
+        #sub.b #content_sub ul div.t,
+        #sub.c #content_sub ul div.t {background-image: url(img/box_small_b_t.gif);}
+        #sub.b #content_sub ul div.b,
+        #sub.c #content_sub ul div.b {background-image: url(img/box_small_b_b.gif);}
+#sub.b #content_sub h3,
+#sub.c #content_sub h3 {
+    color: #fff;
+    background: #933f53;
+    padding: .5em 1em;
+    font-size: .75em;
+}
+/*subportada B alt*/
+#sub.alt #content_main {
+    width: 507px;
+}
+#sub.alt #content_sub {
+    display: none;
+}
+/*subportada C*/
+#sub.c #content_main {width: 606px;}
+#sub.c #content_sub {width: 163px;}
+
+/*destacat subportada*/
+#sub #content_sub div.t {width: 516px; background: url(img/box_mid4_b_t.gif) no-repeat;left: -1px; top: -1px;}
+#sub #content_sub div.b {width: 516px; background: url(img/box_mid4_b_b.gif) 0 100% no-repeat;}
+
+/* LocalitzaciÃ³
+---------------------------------------------*/
+#sub.loc #container_sub {background: #fff;}
+    #sub.loc #container_sub_sub {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+        #sub.loc #content_main {
+            width: 100%;
+            position: relative;
+        }
+            #sub.loc #content_main ul.col {width: 350px;}
+                #sub.loc #content_main ul.col li {
+                    background-position: 5px 6px;
+                    padding-left: 23px;
+                }
+                    #sub.loc #content_main li.actiu {background-color: #f1dee2;}
+            /*mapa*/
+            #sub.loc #content_main div#mapa {
+                width: 441px;
+                height: 475px;
+                float: right;
+            }
+            #content_main div.gmnoprint div.gmglobus,
+            #content_main div.gm-style div.gmglobus {
+                background: url(/media/gif/fons_globus_gm.jpg) no-repeat left top;
+                padding: 50px 0 0 0;
+                width: 291px;
+            }
+            #content_main div.gmnoprint div.gmglobus p,
+            #content_main div.gm-style div.gmglobus p {
+                font-size: .9em;
+                line-height: 130%;
+                margin: 0;
+                padding: 0 0 .3em 0;
+            }
+            #content_main div.gmnoprint div.gmglobus p strong,
+            #content_main div.gm-style div.gmglobus p strong {
+                display: block;
+                font-size: 1.3em;
+                padding: .4em 0;
+            }
+            #content_main div.gmnoprint div.gmglobus form,
+            #content_main div.gm-style div.gmglobus form  {
+                display:none;
+                float:right;
+            }
+                #content_main div.gmnoprint div.gmglobus form label,
+                #content_main div.gm-style div.gmglobus form label {
+                    font-size: .6em;
+                    display:block;
+                    color:#666;
+                }
+                #content_main div.gmnoprint div.gmglobus form input,
+                #content_main div.gm-style div.gmglobus form input   {
+                    font-size:.8em;
+                    margin-right: .5em;
+                    width:10em;
+                }
+                #content_main div.gmnoprint div.gmglobus form input.bt,
+                #content_main div.gm-style div.gmglobus form input.bt {
+                    width: auto;
+                    font-size:.7em;
+                    font-weight: bold;
+                }
+/*llistat columnes*/
+#sub.loc #content_main ul.l,
+#sub.loc #content_main ul.r {
+    margin-left: 0;
+    float: left;
+    width: 45%;
+}
+#sub.loc #content_main ul.r {
+    float: right;
+}
+/*caixa usuari*/
+div#log {
+    background: url(img/contacte_bg.gif) repeat-y;
+    margin: 0 0 1.125em;
+}
+    div#log p {
+        font-size: .75em;
+        margin: 0 0 .8em;
+        text-indent: 1em;
+    }
+        div#log p#usuari {
+            background: url(img/caixa_t.gif) no-repeat;
+            padding-top: 7px;
+        }
+        div#log p#logout {
+            background: url(img/caixa_b.gif) 0 100% no-repeat;
+            padding-bottom: 7px;
+        }
+            div#log p#logout a {
+                background: url(img/ico_desconectar.gif) no-repeat;
+                padding-left: 20px;
+            }
+            div#log p#logout a:link,
+            div#log p#logout a:visited {border: none;}
+            div#log p#logout a:hover {text-decoration: underline;}
+
+/* honoris causa
+---------------------------------------------*/
+#honoris-causa #fitxa {background: #902e45;}
+    #honoris-causa #fitxa img {border-bottom: 1px solid #fff;}
+    #honoris-causa #fitxa dl {
+        background: 15px 10px url(img/ico_honoris.jpg) no-repeat;
+        color: #fff;
+        font-size: .75em;
+        padding-left: 130px;
+        margin: 1em 10px 1em 0;
+    }
+        #honoris-causa #fitxa dt {font-weight: bold;}
+        #honoris-causa #fitxa dd {
+            margin: 0 0 .5em;
+            padding: 0  0 .5em;
+            border-bottom: 1px solid #ba6d7f;
+        }
+
+
+/* dones quimiques
+---------------------------------------------*/
+#dones-quimiques #fitxa {background: #af0a73;}
+    #dones-quimiques #fitxa img {border-bottom: 1px solid #fff;}
+    #dones-quimiques #fitxa dl {
+        background: 15px 10px url(img/icona_clips.jpg) no-repeat;
+        color: #fff;
+        font-size: .75em;
+        padding-left: 130px;
+        margin: 1em 10px 1em 0;
+    }
+        #dones-quimiques #fitxa dt {font-weight: bold;}
+        #dones-quimiques #fitxa dd {
+            margin: 0 0 .5em;
+            padding: 0  0 .5em;
+            border-bottom: 1px solid #ba6d7f;
+        }
+
+/* rÃ nquings
+---------------------------------------------*/
+#sub #container_sub.ranquings {
+    background: #fff;
+}
+    #sub #container_sub.ranquings #container_sub_sub {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 12px;
+        width: 835px;
+    }
+        #sub #container_sub.ranquings #content_main {
+            width: 300px;
+        }
+            #sub #container_sub.ranquings #content_main h3 {
+                color: #333;
+            }
+        #sub #container_sub.ranquings #content_sub {
+            background: #f3dce2;
+            width: 505px;
+            padding: 1em 0;
+            position: relative;
+        }
+            #sub #container_sub.ranquings #content_sub div.grup {
+                margin: 0 18px;
+                float: left;
+                width: 216px;
+                display: inline; /*ie6*/
+            }
+                #sub #container_sub.ranquings #content_sub div.grup h3 {
+                    border-bottom: 1px dotted #933f53;
+                }
+div.bt {
+    font-size: .75em;
+    background: #f3dce2 url(img/kland_portada_standart.gif) 7px .5em no-repeat;
+    margin: 0 0 1em;
+    padding: .5em 10px .5em 30px;
+}
+#titular .bt {
+    width: 15em;
+    float: right;
+    margin-top: -3.7em;
+}
+#content_sub div.bt {
+    background-color: #fff;
+}
+
+
+/* estudis
+---------------------------------------------*/
+#sub #container_sub.estudis {background: none;}
+    #sub #container_sub.estudis #container_sub_sub {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+#sub .estudis #content_main {
+    width: 100%;
+}
+.estudi {
+    background: #E7E7E7;
+    margin-bottom: 22px;
+    padding: 23px 18px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+}
+    .estudi .clearfix {
+        background: url('img/border-estudis.gif') 605px 0 repeat-y;
+    }
+        .estudi .foto {
+            float: left;
+            width: 220px;
+        }
+            #sub #container_sub.estudis .estudi .foto img {
+                border: 8px solid #fff;
+                -webkit-box-shadow:0 0 3px #999;
+                -moz-box-shadow:0 0 3px #999;
+                box-shadow:0 0 3px #999;
+                margin: 0;
+            }
+        .estudi .txt {
+            float: left;
+            width: 370px;
+            padding-right: 15px;
+        }
+            #sub #container_sub.estudis .estudi .txt h3 {
+                font-weight: normal;
+                font-size: 1.5em;
+                padding: 0;
+                margin-bottom: .5em;
+            }
+            #sub #container_sub.estudis .estudi .txt p {margin: 0;}
+            .estudi .txt .mes {font-weight: bold;}
+        .estudi .links {
+            float: left;
+            width: 179px;
+            padding-left: 15px;
+        }
+            #sub #container_sub.estudis .estudi .links h4 {
+                padding: 0;
+                background: none;
+            }
+            #sub #container_sub.estudis .estudi .links ul {margin: 0;}
+                #sub #container_sub.estudis .estudi .links li {
+                    background-image: url('img/kland-links-estudis.gif');
+                    background-position: 0 .95em;
+                    padding-left: 10px;
+                }
