@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pop-up</title>
+  <link rel="stylesheet" href="./../css/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#info" ).dialog({
+		autoOpen: false
+	});
+	  
+	$( "#cancel" ).dialog({
+		width: "450",
+		autoOpen: false,
+		modal: true,
+		buttons: {
+			"Sí": function() {
+				window.location='pantallareserves.html';
+			},
+			"No": function() {
+				$( this ).dialog( "close" );
+			}	
+			
+		}
+	});
+ 
+    $( "#opener_info" ).on( "click", function() {
+      $( "#info" ).dialog( "open" );
+    });
+	  
+	$( "#opener_cancel" ).on( "click", function() {
+      $( "#cancel" ).dialog( "open" );
+    });
+	  
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="info" title="Sala 8 CRAI Sescelades">
+	<p><strong>Disposa de: </strong><br>- Pantalla tàctil<br>- Kit teclat, ratolí, VGA<br>
+		<br><strong>Màxima ocupació:</strong><br>8 persones<br><br><strong>Observacions:</strong><br></p>
+</div>
+ 
+<div id="cancel" title="Confirmeu cancel·lació">
+	<p>Voleu cancel·lar la reserva?<br><br><strong>&ensp;Sala 8 CRAI Sescelades</strong><br>
+		<br><strong>&ensp;Data:</strong> 30/11/2017<br><br><strong>&ensp;Hora:</strong> 17:00 h</p>
+</div>	
+	
+
+<button id="opener_info">Informació sala</button>
+<button id="opener_cancel">Cancel·lar reserva</button>
+ 
+ 
+</body>
+</html>
