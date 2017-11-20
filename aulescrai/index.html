@@ -191,6 +191,7 @@
           </table>
         </fieldset>
       </form>
+       <div id="contingutindex"></div>
      </div>
      <div id="tabs-2">
        Tab gestionar lista
@@ -213,7 +214,12 @@
     $( function() {
       $( "#campus" ).selectmenu();
     } );
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker({
+        onSelect:function(dateText, inst){
+            CargaContingut('subpages/principal.html')
+        }
+    });
+
     $(".dropdown table tr td button ").hover(
         function(event) {
             // The mouse has entered the element, can reference the element via 'this'
@@ -227,6 +233,9 @@
     }
     function unhover(element) {
         element.setAttribute('src', 'img/menu24.png');
+    }
+    function CargaContingut(urlContingut){
+        $('#contingutindex').load(urlContingut);
     }
 
    </script>
