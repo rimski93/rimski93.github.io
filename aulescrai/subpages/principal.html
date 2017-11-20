@@ -99,6 +99,11 @@
 
   <script>
     $( "#selectable1" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable1 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=1) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -113,6 +118,11 @@
     });
 	
 	$( "#selectable2" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable2 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=2) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -127,6 +137,11 @@
     });
 	
 	$( "#selectable3" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable3 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=3) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -141,6 +156,11 @@
     });
 	
 	$( "#selectable4" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable4 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=4) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -155,6 +175,11 @@
     });
 	
 	$( "#selectable5" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable5 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=5) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -169,6 +194,11 @@
     });
 	
 	$( "#selectable6" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable6 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=6) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -183,6 +213,11 @@
     });
 	
 	$( "#selectable7" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable7 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=7) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -197,6 +232,11 @@
     });
 	
 	$( "#selectable8" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable8 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=8) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -211,6 +251,11 @@
     });
 	
 	$( "#selectable9" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable9 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=9) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -225,6 +270,11 @@
     });
 	
 	$( "#selectable10" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable10 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=10) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -239,6 +289,11 @@
     });
 	
 	$( "#selectable11" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable11 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=11) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -253,6 +308,11 @@
     });
 	
 	$( "#selectable12" ).selectable({
+	  selecting: function(event, ui) { 
+		 if ($("#selectable12 .ui-selected, .ui-selecting").length > 6) {
+		   $(ui.selecting).removeClass("ui-selecting");
+		 }
+	  },
 	  selected: function( event, ui ) {
 		for (i=1;i<13;i++)
 			if(i!=12) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
@@ -265,9 +325,6 @@
         });
       }
     });
-	
-	
-	
 </script>
 
 
