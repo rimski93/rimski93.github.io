@@ -19,7 +19,8 @@
 		modal: true,
 		buttons: {
 			"Sí": function() {
-				window.location='pantallareserves.html';
+				$( this ).dialog( "close" );
+				document.getElementById("taula_reserves").deleteRow(2);
 			},
 			"No": function() {
 				$( this ).dialog( "close" );
@@ -37,6 +38,12 @@
     });
 	  
   } );
+	  
+	function eliminar(i){
+		$( "#cancel" ).dialog( "open" );
+	
+	}
+	  
   </script>
 </head>
 <body>
@@ -53,7 +60,52 @@
 	
 
 <button id="opener_info">Informació sala</button>
-<button id="opener_cancel">Cancel·lar reserva</button>
+<button onclick="eliminar(1)">Esborrar</button>
+	
+<table border="1" id="taula_reserves">
+	<tr>
+	 <td colspan="6">Les teves reserves:</td>
+	</tr>
+	<tr>
+	 <th>Data</th>
+	 <th>Inici</th>	
+	 <th>Fi</th>
+	 <th>CRAI</th>	
+	 <th>Aula</th>
+	<th></th>
+	</tr>
+	<tr align="center">
+	<td>24/11/2017</td>
+	<td>17:00</td>
+	<td>18:45</td>
+	<td>Campus Catalunya</td>
+	<td>4</td>
+	<td><button onclick="eliminar(1)">Esborrar</button></td>
+	</tr>
+	<tr align="center">
+	<td>04/12/2017</td>
+	<td>12:00</td>
+	<td>14:00</td>
+	<td>Campus Sescalades</td>
+	<td>1</td>
+	<td><button onclick="eliminar(2)">Esborrar</button></td>
+	</tr>
+	<tr align="center">
+	<td>19/12/2017</td>
+	<td>19:00</td>
+	<td>19:50</td>
+	<td>Campus Sescalades</td>
+	<td>2</td>
+	<td><button onclick="eliminar(3)">Esborrar</button></td>
+	</tr>
+</table>	
+	
+	
+	
+	
+	
+	
+
  
  
 </body>
