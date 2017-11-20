@@ -5,45 +5,453 @@
 <script src="js/jquery.js"></script>
 </head>
 <body>
-<script type="text/javascript">
-function CrearTaula(){
-	var contingut=document.getElementById("taula")
-	var ol = document.createElement("ol")
-	ol.id="selectable"
-	ol.className="ui-selectable"
-	
-	for (var i=0; i<10; i++) ol.innerHTML+='<li class="ui-state-default ui-selectee">'+i+'</li>'
-	contingut.appendChild(ol)
-	
-}
-function test(){
-	contingut = document.getElementById("taula");
-	contingut.innerHTML =("hola");
-}
-</script>
+<p id="feedback">
+<span>Hores seleccionades:</span> <span id="select-result"></span>.
+</p>
 <div id="taula">
-
-<ol id="selectable">
-  <li class="ui-state-default">1</li>
-  <li class="ui-state-default">2</li>
-  <li class="ui-state-default">3</li>
-  <li class="ui-state-default">4</li>
-  <li class="ui-state-default">5</li>
-  <li class="ui-state-default">6</li>
-  <li class="ui-state-default">7</li>
-  <li class="ui-state-default">8</li>
-  <li class="ui-state-default">9</li>
-  <li class="ui-state-default">10</li>
-  <li class="ui-state-default">11</li>
-  <li class="ui-state-default">12</li>
-</ol>
+<table>
+	<tr>
+		<td>
+		</td>
+		<th colspan="12" align="center">
+			Aules
+		</th>
+	</tr>
+	<tr align="center">
+		<th>
+			Horari
+		</th>
+		<th>
+			1
+		</th>
+		<th>
+			2
+		</th>
+		<th>
+			3
+		</th>
+		<th>
+			4
+		</th>
+		<th>
+			5
+		</th>
+		<th>
+			6
+		</th>
+		<th>
+			7
+		</th>
+		<th>
+			8
+		</th>
+		<th>
+			9
+		</th>
+		<th>
+			10
+		</th>
+		<th>
+			11
+		</th>
+		<th>
+			12
+		</th>
+	</tr>
+	<tr>
+		<td width="105">
+			<ol id="selectable0">
+			  <li class="ui-state-default">08:00 - 08.30</li>
+			  <li class="ui-state-default">08.30 - 09:00</li>
+			  <li class="ui-state-default">09.00 - 09:30</li>
+			  <li class="ui-state-default">09.30 - 10:00</li>
+			  <li class="ui-state-default">10.00 - 10:30</li>
+			  <li class="ui-state-default">10.30 - 11:00</li>
+			  <li class="ui-state-default">11.00 - 11:30</li>
+			  <li class="ui-state-default">11.30 - 12:00</li>
+			  <li class="ui-state-default">12.00 - 12:30</li>
+			  <li class="ui-state-default">12.30 - 13:00</li>
+			  <li class="ui-state-default">13.00 - 13:30</li>
+			  <li class="ui-state-default">13.30 - 14:00</li>
+			  <li class="ui-state-default">14.00 - 14:30</li>
+			  <li class="ui-state-default">14.30 - 15:00</li>
+			  <li class="ui-state-default">15.00 - 15:30</li>
+			  <li class="ui-state-default">15.30 - 16:00</li>
+			  <li class="ui-state-default">16.00 - 16:30</li>
+			  <li class="ui-state-default">16.30 - 17:00</li>
+			  <li class="ui-state-default">17.00 - 17:30</li>
+			  <li class="ui-state-default">17.30 - 18:00</li>
+			  <li class="ui-state-default">18.00 - 18:30</li>
+			  <li class="ui-state-default">18.30 - 19:00</li>
+			  <li class="ui-state-default">19.00 - 19:30</li>
+			  <li class="ui-state-default">19.30 - 20:00</li>
+			  <li class="ui-state-default">20.00 - 20:30</li>
+			  <li class="ui-state-default">20.30 - 21:00</li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable1">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable2">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable3">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable4">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable5">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable6">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable7">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable8">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable9">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable10">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable11">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+		<td width="22">
+			<ol id="selectable12">
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"> </li>
+			</ol>
+		</td>
+	</tr>
+</table>
 </div>
-
-
-<script type="text/javascript">
-javascript:CrearTaula();
-//javascript:test();
-</script>
 
 </body>
 </html>
