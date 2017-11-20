@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Tabs - Vertical Tabs functionality</title>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<!--  <link rel="stylesheet" href="css2/style_new.css">-->
+ <!--<link rel="stylesheet" href="css2/style_new.css">-->
   <style>
    .ui-tabs-vertical 
    { 
@@ -37,7 +37,7 @@
      display:block;width: 100%;
      padding-left: 0;
      padding-right: 0;
-     text-align: center 
+     text-align: center; 
    }
    .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active 
    { 
@@ -62,18 +62,20 @@
      padding-bottom: 10px;
      padding-left: 30px;
    }
-   .dropdown{
-       padding-top: 5px;
-       padding-right: 30px;
-       padding-bottom: 10px;
-       padding-left: 30px;
+   .ui-tabs-vertical .ui-tabs-panel{
+   	 width:100%;
+   	 float: right;
+   	 text-align: right;
+   	 position: absolute;
    }
-   .logo {
+   
+   .logo, .titleReserva {
      padding-top: 20px;
      padding-right: 30px;
      padding-bottom: 5px;
      padding-left: 30px;
    }
+   
    footer{
      padding-top: 5px;
      padding-right: 30px;
@@ -81,47 +83,54 @@
      padding-left: 30px;
 
    }
+
+   /* Dropdown Button */
    .dropbtn {
-       background:  url("img/001-menu.png");
-       color: white;
-       padding: 16px;
-       font-size: 16px;
-       border: none;
-       cursor: pointer;
+     background-color: #ffffff;
+     color: black;
+     padding: 16px;
+     font-size: 16px;
+     border: none;
+     cursor: pointer;
    }
 
-   .dropbtn:hover, .dropbtn:focus {
-       background-color: #3e8e41;
-   }
-
+   /* The container <div> - needed to position the dropdown content */
    .dropdown {
-       float: right;
-       position: relative;
-       display: inline-block;
-
+     position: relative;
+     display: inline-block;
    }
 
+   /* Dropdown Content (Hidden by Default) */
    .dropdown-content {
-       display: none;
-       position: absolute;
-       background-color: #f9f9f9;
-       min-width: 160px;
-       overflow: auto;
-       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-       right: 0;
-       z-index: 1;
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     z-index: 1;
    }
 
+   /* Links inside the dropdown */
    .dropdown-content a {
-       color: black;
-       padding: 12px 16px;
-       text-decoration: none;
-       display: block;
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
    }
 
-   .dropdown a:hover {background-color: #f1f1f1}
+   /* Change color of dropdown links on hover */
+   .dropdown-content a:hover {background-color: #f1f1f1}
 
-   .show {display:block;}
+   /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+     display: block;
+   }
+
+   /* Change the background color of the dropdown button when the dropdown content is shown */
+   .dropdown:hover .dropbtn {
+     background-color: rgba(0,0,0,0.2);
+   }
+
   </style>
 </head>
 <body>
@@ -132,16 +141,28 @@
       </tr>
     </table>
   </div>
-  <div class="dropdown">
-      <label>Nom usuari</label>
-      <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-      <div id="myDropdown" class="dropdown-content">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-      </div>
-  </div>
-
+  <table>
+    <tr>
+      <td>
+       <div class="titleReserva"><h3>Reserva Aules de CRAI</h3></div>
+      </td>
+      <td>
+       <div class="dropdown">
+         <table>
+           <tr>
+               <td><label>Oussama El Azizi: </label></td>
+               <td><button class="dropbtn"> <image src="img/menu24.png" onmouseover="hover(this);" onmouseout="unhover(this);"></image></button></td>
+           </tr>
+         </table>
+         <div class="dropdown-content">
+           <a href="#">Intranet</a>
+           <a href="#">Idioma</a>
+           <a href="#">Sortir</a>
+         </div>
+       </div>
+      </td>
+    </tr>
+  </table>
   <div class="principal">
    <div id="tabs">
      <ul>
@@ -193,27 +214,21 @@
       $( "#campus" ).selectmenu();
     } );
     $( "#datepicker" ).datepicker();
-
-    /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
+    $(".dropdown table tr td button ").hover(
+        function(event) {
+            // The mouse has entered the element, can reference the element via 'this'
+        },
+        function (event) {
+            // The mouse has left the element, can reference the element via 'this'
         }
+    );
+    function hover(element) {
+        element.setAttribute('src', 'img/002-menu-button-of-three-lines.png');
     }
+    function unhover(element) {
+        element.setAttribute('src', 'img/menu24.png');
+    }
+
    </script>
   </body>
 
