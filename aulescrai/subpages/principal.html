@@ -1,8 +1,278 @@
 ﻿<html>
 <head>
 <title>Aules</title>
-<link rel="stylesheet" href="img/estil01.css">
-<script src="js/jquery.js"></script>
+  <!--<script src="js/jquery.js"></script>-->
+ 
+  <style>
+  #feedback { font-size: 1.4em; }
+  #selectable0 .ui-selecting { background: #f6f6f6; }
+  #selectable0 .ui-selected { background: #f6f6f6; color: white; }
+  #selectable0 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable0 li { margin: 1px; padding: 1px; float: left; width: 100px; height: 20px; font-size: 1em; text-align: center; }
+  </style>
+  
+  <style>
+  #feedback1 { font-size: 1.4em; }
+  #selectable1 .ui-selecting { background: #FECA40; }
+  #selectable1 .ui-selected { background: #F39814; color: white; }
+  #selectable1 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable1 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  <style>
+  #feedback2 { font-size: 1.4em; }
+  #selectable2 .ui-selecting { background: #FECA40; }
+  #selectable2 .ui-selected { background: #F39814; color: white; }
+  #selectable2 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable2 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  <style>
+  #feedback3 { font-size: 1.4em; }
+  #selectable3 .ui-selecting { background: #FECA40; }
+  #selectable3 .ui-selected { background: #F39814; color: white; }
+  #selectable3 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable3 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  <style>
+  #feedback4 { font-size: 1.4em; }
+  #selectable4 .ui-selecting { background: #FECA40; }
+  #selectable4 .ui-selected { background: #F39814; color: white; }
+  #selectable4 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable4 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  <style>
+  #feedback5 { font-size: 1.4em; }
+  #selectable5 .ui-selecting { background: #FECA40; }
+  #selectable5 .ui-selected { background: #F39814; color: white; }
+  #selectable5 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable5 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  <style>
+  #feedback6 { font-size: 1.4em; }
+  #selectable6 .ui-selecting { background: #FECA40; }
+  #selectable6 .ui-selected { background: #F39814; color: white; }
+  #selectable6 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable6 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  <style>
+  #feedback7 { font-size: 1.4em; }
+  #selectable7 .ui-selecting { background: #FECA40; }
+  #selectable7 .ui-selected { background: #F39814; color: white; }
+  #selectable7 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable7 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  <style>
+  #feedback8 { font-size: 1.4em; }
+  #selectable8 .ui-selecting { background: #FECA40; }
+  #selectable8 .ui-selected { background: #F39814; color: white; }
+  #selectable8 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable8 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  <style>
+  #feedback9 { font-size: 1.4em; }
+  #selectable9 .ui-selecting { background: #FECA40; }
+  #selectable9 .ui-selected { background: #F39814; color: white; }
+  #selectable9 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable9 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  <style>
+  #feedback10 { font-size: 1.4em; }
+  #selectable10 .ui-selecting { background: #FECA40; }
+  #selectable10 .ui-selected { background: #F39814; color: white; }
+  #selectable10 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable10 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  <style>
+  #feedback11 { font-size: 1.4em; }
+  #selectable11 .ui-selecting { background: #FECA40; }
+  #selectable11 .ui-selected { background: #F39814; color: white; }
+  #selectable11 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable11 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  <style>
+  #feedback12 { font-size: 1.4em; }
+  #selectable12 .ui-selecting { background: #FECA40; }
+  #selectable12 .ui-selected { background: #F39814; color: white; }
+  #selectable12 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
+  #selectable12 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
+  </style>
+  
+
+  <script>
+    $( "#selectable1" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=1) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable1 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	$( "#selectable2" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=2) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable2 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	$( "#selectable3" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=3) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable3 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	$( "#selectable4" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=4) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable4 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	$( "#selectable5" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=5) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable5 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	$( "#selectable6" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=6) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable6 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	$( "#selectable7" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=7) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable7 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	$( "#selectable8" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=8) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable8 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	$( "#selectable9" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=9) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable9 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	$( "#selectable10" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=10) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable10 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	$( "#selectable11" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=11) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable11 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	$( "#selectable12" ).selectable({
+	  selected: function( event, ui ) {
+		for (i=1;i<13;i++)
+			if(i!=12) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+	  },
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable12 li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+	
+	
+	
+</script>
+
+
+
+
 </head>
 <body>
 <p id="feedback">
