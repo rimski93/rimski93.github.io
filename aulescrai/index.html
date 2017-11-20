@@ -7,11 +7,8 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <!--Tomas-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!--/Tomas--> 
+  <!--/Tomas-->
  <!--<link rel="stylesheet" href="css2/style_new.css">-->
   <style>
    .ui-tabs-vertical 
@@ -201,7 +198,7 @@
        <div id="contingutindex"></div>
      </div>
      <div id="tabs-2">
-       Tab gestionar lista
+       <div id="contingut2"></div>
      </div>
   
    </div>
@@ -215,9 +212,16 @@
 
   <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" type="text/javascript"></script>
-   
+
+
    <script type="text/javascript">
-    $('#tabs').tabs();
+    $('#tabs').tabs({
+        beforeActivate: function (event, ui) {
+            if (ui.newPanel.is("#tabs-2")){
+                CargaContingut2();
+            }
+        }
+    });
     $( function() {
       $( "#campus" ).selectmenu();
     } );
@@ -244,7 +248,9 @@
     function CargaContingut(urlContingut){
         $('#contingutindex').load(urlContingut);
     }
-
+    function CargaContingut2(){
+        $('#contingut2').load('subpages/pantallareserves.html');
+    }
    </script>
   </body>
 
