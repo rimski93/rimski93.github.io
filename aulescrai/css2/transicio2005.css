@@ -1,0 +1,371 @@
+#content_main td p, #content_main th p{font-size:1.08em;margin:0 0 .5em 0;}
+/*#content_main td ul li{font-size:1.2em;} */
+#content_main li p{font-size:1.08em;margin-bottom:0;}
+#content_main .entradetacontactes td {
+
+  vertical-align: top;
+
+  text-align: left;
+
+  padding: 10px 10px 10px 10px;
+
+  width: 25%;
+
+}
+
+#content_main .entradetacontactes td.descripcio {
+
+  width: 75%;
+ 
+
+}
+
+
+
+#content_main div.titol-llistacontactes {
+font-size: .75em;
+margin: 0 0 .5em;
+background: url(img/kland_1.gif) 0 50% no-repeat;
+padding: .2em 0 .2em 22px;	
+font-weight:bold;
+}
+#content_main p.link_destacat{
+border:solid 1px #ccc;
+padding:5px 25px;
+background: url(img/kland_llistat1.gif) 5px 8px no-repeat;
+margin-top:1em;
+}
+
+#content_main div {
+	font-size:1em;
+	/*margin: 0 0 1.5em;
+	line-height: 1.5em;*/
+}
+
+#content_main div h4{
+/*
+font-size:1.1em;
+margin-bottom:-1em;*/
+}
+#content_main table.taula td.cela{background-color:#ccc;font-weight:bold;}
+
+#content_main .alerta{
+
+  background: url(../comu/cerca_negativa.gif) no-repeat;  
+
+  background-position: 5px 5px;
+
+  border: 1px solid #cccccc;
+
+  padding: 5px 5px 15px 30px;
+
+  margin: 10px 0px 10px 0px;
+
+}
+
+
+#content_main table.taula-pujar{
+	margin-top:.5em;
+	margin-bottom:3em;
+	}
+	table.taula caption{
+	font-size:13px;
+	color:#7F1730;
+	padding-bottom:4px;
+	}
+	table.taula th{
+	font-size:11px;
+
+	color:#666;
+
+	background-color: #f2e8eb;
+
+	font-weight:bold;
+
+	padding:5px;
+
+	text-align:center;
+
+	}
+#content_main table.taula{
+
+	width:100%;
+
+	border:solid 1px #f2e8eb;
+
+}
+
+#content_main table.taula td.cela{
+
+	font-size:11px;
+
+	color:#666;
+
+	background-color: #f2e8eb;
+
+	font-weight:bold;
+
+	padding:5px;
+
+	text-align:center;
+
+}
+
+#content_main table.taula td{
+
+	font-size:10px;
+
+	color:#666;
+
+	background-color: #fff;
+
+	padding:5px;
+
+	text-align:center;
+
+	border-top:dashed 1px #f2e8eb;
+
+}
+
+/*p.peuFoto {
+	font-size: .675em;
+	font-style: italic;
+	
+}
+
+img.foto {
+xmargin-bottom:.2em;	
+	xfloat: left;
+	xwidth:160px;
+}
+*/
+/*estils postgraus*/
+/*-----------------------------------------------*/
+/*-----------------------------------------------*/
+/*-----------------------------------------------*/
+#content_main table table.taula_masters td, #content_main table table.taula_masters th{
+
+	
+
+	font-size:1.1em;
+
+	
+
+}
+
+
+
+
+
+
+
+
+/*taules postgraus*/
+
+
+
+
+/*taules postgraus*/
+
+
+/* estils houdini */
+/*Text + imatge*/
+div.txtImgEsq img {
+	float: left;
+	margin: 0 1.125em 1.125em 0;
+	width:12.4em;
+}
+div.txtImgEsq p {
+	padding-left: 18em;
+}
+div.txtImgDr img {
+	float: right;
+	margin: 0 0 1.125em 1.125em;
+	width:12.4em;
+}
+div.txtImgDr p {
+	padding-right: 18em;
+}
+
+p.linia {
+	padding-bottom:1em;
+	border-bottom:1px solid #d27b91;
+}
+
+#content_main p.alerta {
+	background: #ffffff url(img/ico_novetat.jpg) no-repeat left top;
+	border: 1px solid #801831;
+	border-bottom: 2px solid #801831;
+	line-height: 120%;
+	color: #000000;
+	padding: 1em 1em 1em 4em;
+}
+p.primer {
+	padding-left:1.6em;
+	background: #ffffff url(img/klander_primer_universitat.gif) no-repeat 0 3px;
+	
+}
+#content_main a.pujar {
+		border-top: 1px solid #ccc;
+		padding: .5em 0;
+		display:block;
+		border-bottom:none;
+		text-decoration:none;
+		text-align:right;
+	}
+	#content_main a.pujar:focus,#content_main a.pujar:active {
+		background-color:#fff;
+	}
+	
+/* formularis srct */
+#formulari_srct fieldset{
+	border:1px solid #d27b91;
+	margin:1.5em 0;
+	padding: .5em 1.5em;
+}
+#formulari_srct legend{
+	font-size: .8em;
+	margin: 0 0 1.5em;
+	font-weight:bold;
+	padding: .2em 10px;
+}
+#formulari_srct fieldset div div label{
+	font-size: .75em;
+}
+#formulari_srct fieldset div div{
+	float:left;
+	margin-bottom:.5em;
+}
+	#formulari_srct fieldset div div.lab{
+		width:70px;
+	}
+	#formulari_srct fieldset div div.llarg{
+		width:160px;
+	}
+	#formulari_srct fieldset div div.meitat{
+		width:230px;
+	}
+	#formulari_srct fieldset div div.inp{
+		width:180px;
+	}
+	#formulari_srct fieldset div div label.error{
+		background: url(../comu/bot_error.jpg) no-repeat 0 0;
+		padding-left: 2em;
+		color: #d27b91;
+		display:block;
+	}
+	
+#formulari_srct fieldset div div input{
+	border:1px solid #CCC;
+	margin-right:1em;
+}
+#formulari_srct fieldset div div textarea
+{
+	border:1px solid #CCC;
+}
+#formulari_srct div input.botosubmit{
+	border:1px solid #d27b91;
+	margin:1.5em 0;
+}
+
+/* formularis creats per houdini */
+form#form1 fieldset{
+	border:1px solid #d27b91;
+	margin:1.5em 0;
+	padding: .5em 1.5em;
+}
+form#form1 div.row {
+	/*margin: 8px 0;*/
+	clear:both;
+	background: #F3DDE3;
+	padding:.4em 0;
+}
+    form#form1 input{
+        margin-top: 20px;
+    }
+	form#form1 div.row label {
+		display: block;
+		padding: 5px 0;
+		font-size:.8em;
+	}
+		form#form1 div.row label input {
+			margin-top:0;
+			display: inline; /* ie6 float hack */
+			vertical-align: middle;
+			float: left;
+			width: 58%;
+			margin-right: 1%;
+			border: 1px solid #999;
+			padding: 2px;
+			background: #fff;
+		}
+		form#form1 div.row label input.check{
+		  width: 20px;
+		}
+		
+		form#form1 div.row label span {
+			display: inline; /* ie6 float hack */
+			vertical-align: middle;
+			float: left;
+			width: 27%;
+			margin: 0 2%;
+			padding: 2px 0;
+		}
+		form#form1 div.textarea {
+			margin-bottom: 8px;
+			padding: 5px 0;
+			clear:both;
+			background: #F3DDE3;
+		}
+			form#form1 div.textarea label {
+				display: block; /* ie6 float hack */
+				margin: 0 2% .3em 2%;
+				padding: 2px 0;
+				font-size:.8em;
+			}
+			form#form1 div.textarea textarea {
+				display: inline; /* ie6 float hack */
+				float: left;
+				width: 91%;
+				height: 120px;
+				margin: 0 2% 8px 0;
+				border: 1px solid #999;
+				padding: 4px 0;
+			}
+			form#form1 div.row label span.error, 
+			form#form1 div.textarea span.error {
+					display: inline; /* ie float hack */
+					clear: right;
+					float: left;
+					width: 58%;
+					margin: 0 0 0 31%;
+					padding: 6px 0 6px 18px;
+					color: #000;
+					font-size: .83em;
+					font-weight: bold;
+					background: url("../comu/bot_error.jpg") no-repeat left center;
+				}
+				form#form1 div.textarea span.error {
+					display: block;
+					float: none;
+					margin: 0 2%;
+				}
+				form#form1 div.row label span.success,  
+				form#form1 div.textarea span.success {
+					display: inline; /* ie float hack */
+					float: right;
+					width: 14px;
+					height: 14px;
+					margin: 3px 10px 0 0;
+					padding: 0;
+					background: url("../comu/marca_ok.jpg") no-repeat left center;
+				}
+				form#form1 div.textarea textarea.error,
+				form#form1 div.row label input.error {
+					border: 1px solid #BD516B;
+				}
+				form#form1 div.textarea textarea:focus,
+				form#form1 div.row label input:focus {
+					border: 1px solid #595959;
+				}
+				

@@ -1,143 +1,235 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="menu/mbcsmbindex.css" type="text/css" />
-<title>Turisme :: Ajuntament d'Ascó</title>
-<link rel="shortcut icon" href="img/favicon.ico">
-<link rel="stylesheet" href="img/estil01.css">
-<!--<script src="js/jquery.js"></script>-->
-<script>
-function CargaContingut(urlContingut){
-	$('#contingutindex').load(urlContingut);
-}
-function CargaTitol(titol){
-	var enllac = "<b>Inici ->"+titol+"</b>";
-	$('#divtitol').html(enllac);
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
- 
+  <title>jQuery UI Tabs - Vertical Tabs functionality</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <!--<link rel="stylesheet" href="css2/style_new.css">-->
   <style>
-  #feedback { font-size: 1.4em; }
-  #selectable .ui-selecting { background: #FECA40; }
-  #selectable .ui-selected { background: #F39814; color: white; }
-  #selectable { list-style-type: none; margin: 0; padding: 0; width: 650px; }
-  #selectable li { margin: 3px; padding: 1px; float: left; width: 100px; height: 80px; font-size: 4em; text-align: center; }
+   .ui-tabs-vertical 
+   { 
+     width: 55em; 
+   }
+   .ui-tabs-vertical .ui-tabs-nav 
+   { 
+     padding: .2em .1em .2em .2em; 
+     float: left; 
+     width: 12em; 
+     display: -webkit-box;
+     display: -moz-box; 
+     display:box;
+   }
+   .ui-tabs-vertical .ui-tabs-nav li 
+   { 
+     -webkit-box-flex: 1;
+     -moz-box-flex: 1;
+     box-flex: 1;
+     clear: left; 
+     width: 100%; 
+     border-bottom-width: 1px !important; 
+     border-right-width: 0 !important; 
+     margin: 0 -1px .2em 0; 
+     
+   }
+   .ui-tabs-vertical .ui-tabs-nav li a 
+   { 
+     display:block;width: 100%;
+     padding-left: 0;
+     padding-right: 0;
+     text-align: center; 
+   }
+   .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active 
+   { 
+     padding-bottom: 0; 
+     padding-right: .1em; 
+     border-right-width: 1px; 
+   }
+   .ui-tabs-vertical .ui-tabs-panel 
+   { 
+     padding: 1em; 
+     float: right; 
+     width: 40em;
+   }
+   .ui-tabs-vertical .ui-tabs-nav li:last-child 
+   { 
+     margin-right: -7px;
+   }
+
+   .principal {
+     padding-top: 5px;
+     padding-right: 30px;
+     padding-bottom: 10px;
+     padding-left: 30px;
+   }
+   .ui-tabs-vertical .ui-tabs-panel{
+   	 width:100%;
+   	 float: right;
+   	 text-align: right;
+   	 position: absolute;
+   }
+   
+   .logo, .titleReserva {
+     padding-top: 20px;
+     padding-right: 30px;
+     padding-bottom: 5px;
+     padding-left: 30px;
+   }
+   
+   footer{
+     padding-top: 5px;
+     padding-right: 30px;
+     padding-bottom: 10px;
+     padding-left: 30px;
+
+   }
+
+   /* Dropdown Button */
+   .dropbtn {
+     background-color: #ffffff;
+     color: black;
+     padding: 16px;
+     font-size: 16px;
+     border: none;
+     cursor: pointer;
+   }
+
+   /* The container <div> - needed to position the dropdown content */
+   .dropdown {
+     position: relative;
+     display: inline-block;
+   }
+
+   /* Dropdown Content (Hidden by Default) */
+   .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     z-index: 1;
+   }
+
+   /* Links inside the dropdown */
+   .dropdown-content a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+   }
+
+   /* Change color of dropdown links on hover */
+   .dropdown-content a:hover {background-color: #f1f1f1}
+
+   /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+     display: block;
+   }
+
+   /* Change the background color of the dropdown button when the dropdown content is shown */
+   .dropdown:hover .dropbtn {
+     background-color: rgba(0,0,0,0.2);
+   }
+
   </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#selectable" ).selectable();
-  } );
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
 </head>
 <body>
-<div id="general">
-<div id="cap">
-<img src="img/head.gif"><img src="img/head02.gif">
-</div>
-<div id="divtitol"><b>Inici</b></div>
-<div id="mprincipal">
-<ul id="ebul_mbindex_2" class="ebul_mbindex" style="display: none;">
-<li><a href="javascript:CargaContingut('subpages/equipaments/culturalsilleure.html');CargaTitol('Equipaments -> Culturals i de Lleure')" title="">Culturals i de Lleure</a></li>
-<li><a href="javascript:CargaContingut('subpages/equipaments/esportius.html');CargaTitol('Equipaments -> Esportius')" title="">Esportius</a></li>
-<li><a href="javascript:CargaContingut('subpages/equipaments/socials.html');CargaTitol('Equipaments -> Socials')" title="">Socials</a></li>
-<li><a href="javascript:CargaContingut('subpages/equipaments/educatius.html');CargaTitol('Equipaments -> Educatius')" title="">Educatius</a></li>
-<li><a href="javascript:CargaContingut('subpages/equipaments/sanitaris.html');CargaTitol('Equipaments -> Sanitaris')" title="">Sanitaris</a></li>
-<li><a href="javascript:CargaContingut('subpages/equipaments/altres.html');CargaTitol('Equipaments -> Altres')" title="">Altres</a></li>
-</ul>
-<ul id="ebul_mbindex_3" class="ebul_mbindex" style="display: none;">
-<li><a href="javascript:CargaContingut('subpages/gcomercial/articlesvaris.html');CargaTitol('Guia comercial -> Articles Varis')" title="">Articles Varis</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/barsirestaurants.html');CargaTitol('Guia comercial -> Bars i Restaurants')" title="">Bars i Restaurants</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/carniseries.html');CargaTitol('Guia comercial -> Carniseries')" title="">Carniseries</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/comunicacio.html');CargaTitol('Guia comercial -> Comunicació')" title="">Comunicació</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/cooperativaiceller.html');CargaTitol('Guia comercial -> Cooperativa i Celler')" title="">Cooperativa i Celler</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/dissenyiimpressio.html');CargaTitol('Guia comercial -> Disseny i Impresió')" title="">Disseny i Impresió</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/entitatsbancaries.html');CargaTitol('Guia comercial -> Entitats Bancàries')" title="">Entitats Bancàries</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/farmacia.html');CargaTitol('Guia comercial -> Farmàcia')" title="">Farmàcia</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/ferreteria.html');CargaTitol('Guia comercial -> Ferreteria')" title="">Ferreteria</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/fornsipastisseries.html');CargaTitol('Guia comercial -> Forns i Pastisseries')" title="">Forns i Pastisseries</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/fotografia.html');CargaTitol('Guia comercial -> Fotografia')" title="">Fotografia</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/fusteria.html');CargaTitol('Guia comercial -> Fusteria')" title="">Fusteria</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/inmmobiliaries.html');CargaTitol('Guia comercial -> Inmmobiliàries')" title="">Inmmobiliàries</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/joieriarellotgeria.html');CargaTitol('Guia comercial -> Joieria - Rellotgeria')" title="">Joieria - Rellotgeria</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/llibreries.html');CargaTitol('Guia comercial -> Llibreriers')" title="">Llibreries</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/materialsdeconstruccio.html');CargaTitol('Guia comercial -> Materials de Construcció')" title="">Materials de construcció</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/modaiconfeccio.html');CargaTitol('Guia comercial -> Moda i Confecció')" title="">Moda i Confecció</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/peixateries.html');CargaTitol('Guia comercial -> Peixateries')" title="">Peixateries</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/perruqueries.html');CargaTitol('Guia comercial -> Perruqueries')" title="">Perruqueries</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/queviures.html');CargaTitol('Guia comercial -> Queviures')" title="">Queviures</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/regalsialtres.html');CargaTitol('Guia comercial -> Regals i Altres')" title="">Regals i Altres</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/tallers.html');CargaTitol('Guia comercial -> Tallers')" title="">Tallers</a></li>
-<li><a href="javascript:CargaContingut('subpages/gcomercial/varis.html');CargaTitol('Guia comercial -> Varis')" title="">Varis</a></li>
-</ul>
-<ul id="ebul_mbindex_4" class="ebul_mbindex" style="display: none;">
-<li><a href="javascript:CargaContingut('subpages/llocsdinteres/caestisora.html');CargaTitol('Llocs d\'interés -> Ca Estisora')" title="">Ca Estisora</a></li>
-<li><a href="javascript:CargaContingut('subpages/llocsdinteres/calcavaller.html');CargaTitol('Llocs d\'interés -> Cal Cavaller')" title="">Cal Cavaller</a></li>
-<li><a href="javascript:CargaContingut('subpages/llocsdinteres/poudeneu.html');CargaTitol('Llocs d\'interés -> Pou de neu')" title="">Pou de Neu</a></li>
-<li><a href="javascript:CargaContingut('subpages/llocsdinteres/voltesisitges.html');CargaTitol('Llocs d\'interés -> Voltes i Sitges')" title="">Voltes i Sitges</a></li>
-<li><a href="javascript:CargaContingut('subpages/llocsdinteres/carrerdelamola.html');CargaTitol('Llocs d\'interés -> Carrer de la Mola')" title="">Carrer de la Mola</a></li>
-<li><a href="javascript:CargaContingut('subpages/llocsdinteres/balcodelebre.html');CargaTitol('Llocs d\'interés -> Balcó de l\'Ebre')" title="">Balcó de l'Ebre</a></li>
-<li><a href="javascript:CargaContingut('subpages/llocsdinteres/esglesia.html');CargaTitol('Llocs d\'interés -> Església')" title="">Església</a></li>
-<li><a href="javascript:CargaContingut('subpages/llocsdinteres/carrersequerets.html');CargaTitol('Llocs d\'interés -> Carrer Sequerets')" title="">Carrer Sequerets</a></li>
-<li><a href="javascript:CargaContingut('subpages/llocsdinteres/elsperxes.html');CargaTitol('Llocs d\'interés -> Els Perxes')" title="">Els Perxes</a></li>
-<li><a href="javascript:CargaContingut('subpages/llocsdinteres/castell.html');CargaTitol('Llocs d\'interés -> Castell')" title="">Castell</a></li>
-</ul><ul id="mbindexebul_table" class="mbindexebul_menulist" style="width: 180px; height: 327px;">
-  <li class="spaced_li"><a href="inici.html"><img id="mbi_mbindex_1" src="menu/mb_inici.gif" name="mbi_mbindex_1" width="180" height="40" style="vertical-align: bottom;" border="0" alt="Inici" title="" /></a></li>
-  <li class="spaced_li"><a><img id="mbi_mbindex_2" src="menu/mb_equipaments.gif" name="mbi_mbindex_2" width="180" height="40" style="vertical-align: bottom;" border="0" alt="Equipaments" title="" /></a></li>
-  <li class="spaced_li"><a><img id="mbi_mbindex_3" src="menu/mb_guia_comercial.gif" name="mbi_mbindex_3" width="180" height="40" style="vertical-align: bottom;" border="0" alt="Guia Comercial" title="" /></a></li>
-  <li class="spaced_li"><a><img id="mbi_mbindex_4" src="menu/mb_llocs_d_inter_s.gif" name="mbi_mbindex_4" width="180" height="40" style="vertical-align: bottom;" border="0" alt="Llocs d'interès" title="" /></a></li>
-  <li class="spaced_li"><a href="javascript:CargaContingut('subpages/onmenjar.html');CargaTitol('On Menjar')"><img id="mbi_mbindex_5" src="menu/mb_on_menjar.gif" name="mbi_mbindex_5" width="180" height="40" style="vertical-align: bottom;" border="0" alt="On menjar" title="" /></a></li>
-  <li class="spaced_li"><a href="javascript:CargaContingut('subpages/oficinaturisme.html');CargaTitol('Oficina de Turisme')"><img id="mbi_mbindex_6" src="menu/mb_oficina_de_turisme.gif" name="mbi_mbindex_6" width="180" height="40" style="vertical-align: bottom;" border="0" alt="Oficina de turisme" title="" /></a></li>
-  <li class="spaced_li"><a href="javascript:CargaContingut('subpages/publicacions.html');CargaTitol('Publicacions')"><img id="mbi_mbindex_7" src="menu/mb_publicacions.gif" name="mbi_mbindex_7" width="180" height="40" style="vertical-align: bottom;" border="0" alt="Publicacions" title="" /></a></li>
-  <li class="spaced_li"><a href="javascript:CargaContingut('subpages/horaritrenbus.html');CargaTitol('Horari Tren / Bus')"><img id="mbi_mbindex_8" src="menu/mb_horari_tren_bus.gif" name="mbi_mbindex_8" width="180" height="40" style="vertical-align: bottom;" border="0" alt="Horari Tren / Bus" title="" /></a></li>
+  <div class="logo">
+    <table>
+      <tr>
+        <td><img src ="img/logo-crai.jpg"/></td>
+      </tr>
+    </table>
+  </div>
+  <table>
+    <tr>
+      <td>
+       <div class="titleReserva"><h3>Reserva Aules de CRAI</h3></div>
+      </td>
+      <td>
+       <div class="dropdown">
+         <table>
+           <tr>
+               <td><label>Oussama El Azizi: </label></td>
+               <td><button class="dropbtn"> <image src="img/menu24.png" onmouseover="hover(this);" onmouseout="unhover(this);"></image></button></td>
+           </tr>
+         </table>
+         <div class="dropdown-content">
+           <a href="#">Intranet</a>
+           <a href="#">Idioma</a>
+           <a href="#">Sortir</a>
+         </div>
+       </div>
+      </td>
+    </tr>
+  </table>
+  <div class="principal">
+   <div id="tabs">
+     <ul>
+       <li><a href="#tabs-1">Reserva Sala</a></li>
+       <li><a href="#tabs-2">Gestionar reserva</a></li>
+     </ul>
+     <div id="tabs-1">
+       <form action="#">
+        <fieldset>
+          <table>
+            <tr>
+              <td>
+                <label for="campus">Selecciona el campus: </label>
+                <select name="campus" id="campus">
+                  <option>Secselades</option>
+                  <option>Bellicens</option>
+                  <option selected="selected">Catalunya</option>
+                  <option>Vil·laseca</option>
+                  <option>Terres de l'ebre</option>
+                </select>
+              </td>
+              <td>
+                <p >Data: <input type="text" id="datepicker"></p>
+              </td>
+           </tr>
+          </table>
+        </fieldset>
+      </form>
+     </div>
+     <div id="tabs-2">
+       Tab gestionar lista
+     </div>
+  
+   </div>
+  </div>
 
-</ul>
-<script type="text/javascript" src="menu/mbjsmbindex.js"></script></body>
-</div>
-<div id="contingutindex" align="center">
-<script>javascript:CargaContingut('subpages/principal.html');</script>
-<iframe width="560" height="315" src="http://www.youtube.com/embed/IvgfapKil2s" frameborder="0" allowfullscreen></iframe>
-</div>
-<div id=banners>
-<table>
-<tr><td align="center">
-<a href="http://www.xatic.cat/" target="_blank"><img src="img/banners/banner-xatic.gif" width="15%" border="0"></a>
-<a href="http://www.batallaebre.org" target="_blank"><img src="img/banners/banner-comebe.gif" width="15%" border="0"></a>
-<a href="http://www.riberaebre.org/navegacio" target="_blank"><img src="img/banners/banner-riu.gif" width="15%" border="0"></a>
-<a href="http://www.aemet.es/es/eltiempo/prediccion/municipios/asco-id43019" target="_blank"><img src="img/banners/banner-temps.gif" width="15%" border="0"></a>
-<a href="http://es.wikiloc.com/wikiloc/find.do?q=asc%C3%B3" target="_blank"><img src="img/banners/banner-natura.gif" width="15%" border="0"></a>
-<a href="http://maps.google.es/maps?ll=41.183047,0.56762&spn=0.009544,0.022638&t=h&z=16&lci=com.panoramio.all" target="_blank"><img src="img/banners/banner-volvirtual.gif" width="15%" border="0"></a>
-</td></tr>
-</table>
-</div>
+  <footer>
+      <p>Contacteu amb nosaltres</p>
+      <p>Telèfon (+34) 977 558 000 </p><p>Correu <a href="info@urv.cat">
+      info@urv.cat</a>.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" type="text/javascript"></script>
+   
+   <script type="text/javascript">
+    $('#tabs').tabs();
+    $( function() {
+      $( "#campus" ).selectmenu();
+    } );
+    $( "#datepicker" ).datepicker();
+    $(".dropdown table tr td button ").hover(
+        function(event) {
+            // The mouse has entered the element, can reference the element via 'this'
+        },
+        function (event) {
+            // The mouse has left the element, can reference the element via 'this'
+        }
+    );
+    function hover(element) {
+        element.setAttribute('src', 'img/002-menu-button-of-three-lines.png');
+    }
+    function unhover(element) {
+        element.setAttribute('src', 'img/menu24.png');
+    }
+
+   </script>
+  </body>
+
 </html>
