@@ -4,6 +4,14 @@
   <!--<script src="js/jquery.js"></script>-->
  
   <style>
+  #feedbackA { font-size: 1.4em; }
+  #selectableA .ui-selecting { background: #FECA40; }
+  #selectableA .ui-selected { background: #F39814; color: white; }
+  #selectableA { list-style-type: none; margin: 0; padding: 0; width: 312px; }
+  #selectableA li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 1em; text-align: center; }
+  </style>
+  
+  <style>
   #feedback { font-size: 1.4em; }
   #selectable0 .ui-selecting { background: #f6f6f6; }
   #selectable0 .ui-selected { background: #f6f6f6; color: white; }
@@ -97,7 +105,7 @@
   </style>
   
 
-  <script>
+  <script>  
     $( "#selectable1" ).selectable({
 	  selecting: function(event, ui) { 
 		 if ($("#selectable1 .ui-selected, .ui-selecting").length > 6) {
@@ -340,7 +348,7 @@
 	<tr>
 		<td>
 		</td>
-		<th colspan="12" align="center">
+		<th colspan="13" align="center">
 			Aules
 		</th>
 	</tr>
@@ -348,42 +356,22 @@
 		<th>
 			Horari
 		</th>
-		<th>
-			1
-		</th>
-		<th>
-			2
-		</th>
-		<th>
-			3
-		</th>
-		<th>
-			4
-		</th>
-		<th>
-			5
-		</th>
-		<th>
-			6
-		</th>
-		<th>
-			7
-		</th>
-		<th>
-			8
-		</th>
-		<th>
-			9
-		</th>
-		<th>
-			10
-		</th>
-		<th>
-			11
-		</th>
-		<th>
-			12
-		</th>
+		<td colspan="12">
+		<ol id="selectableA">
+			<li onclick="location.href='#'" class="ui-state-default">1</li>
+			<li onclick="location.href='#'" class="ui-state-default">2</li>
+			<li onclick="location.href='#'" class="ui-state-default">3</li>
+			<li onclick="location.href='#'" class="ui-state-default">4</li>
+			<li onclick="location.href='#'" class="ui-state-default">5</li>
+			<li onclick="location.href='#'" class="ui-state-default">6</li>
+			<li onclick="location.href='#'" class="ui-state-default">7</li>
+			<li onclick="location.href='#'" class="ui-state-default">8</li>
+			<li onclick="location.href='#'" class="ui-state-default">9</li>
+			<li onclick="location.href='#'" class="ui-state-default">10</li>
+			<li onclick="location.href='#'" class="ui-state-default">11</li>
+			<li onclick="location.href='#'" class="ui-state-default">12</li>
+		</ol>
+		</td>
 	</tr>
 	<tr>
 		<td width="105">
