@@ -333,6 +333,23 @@
         });
       }
     });
+	  
+	$( function() {
+   	 $( "#info" ).dialog({
+		autoOpen: false,
+		width: "350"
+	 } );
+	});
+	  
+	function mostrar(campus, numero, ocupacio, pantalla, pissarra, observacions){
+		var text = "<br>Sala "+numero+" del CRAI "+campus+"<br><br><strong>&ensp;Disposa de:</strong><br>&ensp;&ensp;"+pantalla+"<br>&ensp;&ensp;"+pissarra+"<br><br><strong>&ensp;Màxima ocupació:</strong><br>&ensp;&ensp;- "+ocupacio+"<br><br><strong>&ensp;Observacions:</strong><br>&ensp;"+observacions+"<br><br>";
+		document.getElementById("info").innerHTML = text;
+		$( "#info" ).dialog( "open" );
+	
+	}  
+	  
+	  
+	  
 </script>
 
 
@@ -343,6 +360,10 @@
 <p id="feedback">
 <span>Hores seleccionades:</span> <span id="select-result"></span>.
 </p>
+	
+<div id="info" title="Informació de la sala">
+</div>
+	
 <div id="taula">
 <table>
 	<tr>
@@ -358,7 +379,7 @@
 		</th>
 		<td colspan="12">
 		<ol id="selectableA">
-			<li onclick="location.href='#'" class="ui-state-default">1</li>
+			<li onclick="mostrar('Campus Catalunya', '2', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" class="ui-state-default">1</li>
 			<li onclick="location.href='#'" class="ui-state-default">2</li>
 			<li onclick="location.href='#'" class="ui-state-default">3</li>
 			<li onclick="location.href='#'" class="ui-state-default">4</li>

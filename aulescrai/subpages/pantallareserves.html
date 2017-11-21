@@ -28,9 +28,6 @@
     </style>
   <script>
   $( function() {
-    $( "#info" ).dialog({
-		autoOpen: false
-	});
 	  
 	$( "#cancel" ).dialog({
 		width: "450",
@@ -48,10 +45,6 @@
 			
 		}
 	});
- 
-    $( "#opener_info" ).on( "click", function() {
-      $( "#info" ).dialog( "open" );
-    });
 	  
 	  
   } );
@@ -67,17 +60,9 @@
 </head>
 <body>
  
-<div id="info" title="Informació de sala">
-	<p><strong>Disposa de: </strong><br>- Pantalla tàctil<br>- Kit teclat, ratolí, VGA<br>
-		<br><strong>Màxima ocupació:</strong><br>8 persones<br><br><strong>Observacions:</strong><br></p>
-</div>
 	
 <div id="cancel" title="Confirmeu cancel·lació">
 </div>
-
-	
-
-<button id="opener_info">Informació sala</button>
 	
 <table id="taula_reserves">
 	<tr>
