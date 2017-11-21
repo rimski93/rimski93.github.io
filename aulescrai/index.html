@@ -226,6 +226,11 @@
       $( "#campus" ).selectmenu();
     } );
     $( "#datepicker" ).datepicker({
+		firstDay: 1,
+		dateFormat: 'dd/mm/yy',
+		dayNamesMin: ['Dg','Dl','Dt','Dc','Dj','Dv','Ds'],
+		dayNames: ['Diumenge','Dilluns','Dimarts','Dimecres','Dijous','Divendres','Dissabte'],
+		monthNames: ['Gener','Febrer','Març','Abril','Maig','Juny','Juliol','Agost','Setembre','Octubre','Novembre','Desembre'],
         onSelect:function(dateText, inst){
             CargaContingut('subpages/principal.html')
         }
