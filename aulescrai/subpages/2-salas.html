@@ -4,6 +4,14 @@
   <!--<script src="js/jquery.js"></script>-->
  
   <style>
+  #feedbackA { font-size: 1.4em; }
+  #selectableA .ui-selecting { background: #FECA40; }
+  #selectableA .ui-selected { background: #F39814; color: white; }
+  #selectableA { list-style-type: none; margin: 0; padding: 0; width: 312px; }
+  #selectableA li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 1em; text-align: center; }
+  </style>
+  
+  <style>
   #feedback { font-size: 1.4em; }
   #selectable0 .ui-selecting { background: #f6f6f6; }
   #selectable0 .ui-selected { background: #f6f6f6; color: white; }
@@ -18,17 +26,15 @@
   #selectable1 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
   #selectable1 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
   </style>
-
   <style>
   #feedback2 { font-size: 1.4em; }
   #selectable2 .ui-selecting { background: #FECA40; }
   #selectable2 .ui-selected { background: #F39814; color: white; }
   #selectable2 { list-style-type: none; margin: 0; padding: 0; width: 20px; }
   #selectable2 li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 4em; text-align: center; }
-  </style>
-  
+  </style>  
 
-  <script>
+  <script>  
     $( "#selectable1" ).selectable({
 	  selecting: function(event, ui) { 
 		 if ($("#selectable1 .ui-selected, .ui-selecting").length > 6) {
@@ -36,7 +42,7 @@
 		 }
 	  },
 	  selected: function( event, ui ) {
-		for (i=1;i<13;i++)
+		for (i=1;i<3;i++)
 			if(i!=1) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
       stop: function() {
@@ -55,7 +61,7 @@
 		 }
 	  },
 	  selected: function( event, ui ) {
-		for (i=1;i<13;i++)
+		for (i=1;i<3;i++)
 			if(i!=2) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
       stop: function() {
@@ -66,6 +72,23 @@
         });
       }
     });
+		  
+	$( function() {
+   	 $( "#info" ).dialog({
+		autoOpen: false,
+		width: "350"
+	 } );
+	});
+	  
+	function mostrar(campus, numero, ocupacio, pantalla, pissarra, observacions){
+		var text = "<br>Sala "+numero+" del CRAI "+campus+"<br><br><strong>&ensp;Disposa de:</strong><br>&ensp;&ensp;"+pantalla+"<br>&ensp;&ensp;"+pissarra+"<br><br><strong>&ensp;Màxima ocupació:</strong><br>&ensp;&ensp;- "+ocupacio+"<br><br><strong>&ensp;Observacions:</strong><br>&ensp;"+observacions+"<br><br>";
+		document.getElementById("info").innerHTML = text;
+		$( "#info" ).dialog( "open" );
+	
+	}  
+	  
+	  
+	  
 </script>
 
 
@@ -76,12 +99,16 @@
 <p id="feedback">
 <span>Hores seleccionades:</span> <span id="select-result"></span>.
 </p>
+	
+<div id="info" title="Informació de la sala">
+</div>
+	
 <div id="taula">
 <table>
 	<tr>
 		<td>
 		</td>
-		<th colspan="12" align="center">
+		<th colspan="2" align="center">
 			Aules
 		</th>
 	</tr>
@@ -89,12 +116,12 @@
 		<th>
 			Horari
 		</th>
-		<th>
-			1
-		</th>
-		<th>
-			2
-		</th>
+		<td colspan="2">
+		<ol id="selectableA">
+			<li onclick="mostrar('Campus Sescelades', '1', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" class="ui-state-default">1</li>
+			<li onclick="mostrar('Campus Sescelades', '2', '8 persones', '- Pantalla tàctil', '- Pissarra', 'No funciona la pantalla')" class="ui-state-default">2</li>
+		</ol>
+		</td>
 	</tr>
 	<tr>
 		<td width="105">

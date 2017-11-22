@@ -4,6 +4,14 @@
   <!--<script src="js/jquery.js"></script>-->
  
   <style>
+  #feedbackA { font-size: 1.4em; }
+  #selectableA .ui-selecting { background: #FECA40; }
+  #selectableA .ui-selected { background: #F39814; color: white; }
+  #selectableA { list-style-type: none; margin: 0; padding: 0; width: 312px; }
+  #selectableA li { margin: 1px; padding: 1px; float: left; width: 20px; height: 20px; font-size: 1em; text-align: center; }
+  </style>
+  
+  <style>
   #feedback { font-size: 1.4em; }
   #selectable0 .ui-selecting { background: #f6f6f6; }
   #selectable0 .ui-selected { background: #f6f6f6; color: white; }
@@ -97,7 +105,7 @@
   </style>
   
 
-  <script>
+  <script>  
     $( "#selectable1" ).selectable({
 	  selecting: function(event, ui) { 
 		 if ($("#selectable1 .ui-selected, .ui-selecting").length > 6) {
@@ -325,6 +333,23 @@
         });
       }
     });
+	  
+	$( function() {
+   	 $( "#info" ).dialog({
+		autoOpen: false,
+		width: "350"
+	 } );
+	});
+	  
+	function mostrar(campus, numero, ocupacio, pantalla, pissarra, observacions){
+		var text = "<br>Sala "+numero+" del CRAI "+campus+"<br><br><strong>&ensp;Disposa de:</strong><br>&ensp;&ensp;"+pantalla+"<br>&ensp;&ensp;"+pissarra+"<br><br><strong>&ensp;Màxima ocupació:</strong><br>&ensp;&ensp;- "+ocupacio+"<br><br><strong>&ensp;Observacions:</strong><br>&ensp;"+observacions+"<br><br>";
+		document.getElementById("info").innerHTML = text;
+		$( "#info" ).dialog( "open" );
+	
+	}  
+	  
+	  
+	  
 </script>
 
 
@@ -335,6 +360,10 @@
 <p id="feedback">
 <span>Hores seleccionades:</span> <span id="select-result"></span>.
 </p>
+	
+<div id="info" title="Informació de la sala">
+</div>
+	
 <div id="taula">
 <table>
 	<tr>
@@ -348,42 +377,22 @@
 		<th>
 			Horari
 		</th>
-		<th>
-			1
-		</th>
-		<th>
-			2
-		</th>
-		<th>
-			3
-		</th>
-		<th>
-			4
-		</th>
-		<th>
-			5
-		</th>
-		<th>
-			6
-		</th>
-		<th>
-			7
-		</th>
-		<th>
-			8
-		</th>
-		<th>
-			9
-		</th>
-		<th>
-			10
-		</th>
-		<th>
-			11
-		</th>
-		<th>
-			12
-		</th>
+		<td colspan="12">
+		<ol id="selectableA">
+			<li onclick="mostrar('Campus Sescelades', '1', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" class="ui-state-default">1</li>
+			<li onclick="mostrar('Campus Sescelades', '2', '8 persones', '- Pantalla tàctil', '- Pissarra', 'No funciona la pantalla')" class="ui-state-default">2</li>
+			<li onclick="mostrar('Campus Sescelades', '3', '8 persones', '- Pantalla tàctil', '', '')"class="ui-state-default">3</li>
+			<li onclick="mostrar('Campus Sescelades', '4', '8 persones', '- Pantalla tàctil', '', '')" class="ui-state-default">4</li>
+			<li onclick="mostrar('Campus Sescelades', '5', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" class="ui-state-default">5</li>
+			<li onclick="mostrar('Campus Sescelades', '6', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" class="ui-state-default">6</li>
+			<li onclick="mostrar('Campus Sescelades', '7', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" class="ui-state-default">7</li>
+			<li onclick="mostrar('Campus Sescelades', '8', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" class="ui-state-default">8</li>
+			<li onclick="mostrar('Campus Sescelades', '9', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" class="ui-state-default">9</li>
+			<li onclick="mostrar('Campus Sescelades', '10', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" class="ui-state-default">10</li>
+			<li onclick="mostrar('Campus Sescelades', '11', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" class="ui-state-default">11</li>
+			<li onclick="mostrar('Campus Sescelades', '12', '8 persones', '', '- Pissarra', '')" class="ui-state-default">12</li>
+		</ol>
+		</td>
 	</tr>
 	<tr>
 		<td width="105">
