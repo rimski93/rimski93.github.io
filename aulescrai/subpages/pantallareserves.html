@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pop-up</title>
+  <title>Gestió de reserves</title>
   <link rel="stylesheet" href="jquery-ui.css">
 
     <style>
@@ -28,9 +28,6 @@
     </style>
   <script>
   $( function() {
-    $( "#info" ).dialog({
-		autoOpen: false
-	});
 	  
 	$( "#cancel" ).dialog({
 		width: "450",
@@ -48,10 +45,6 @@
 			
 		}
 	});
- 
-    $( "#opener_info" ).on( "click", function() {
-      $( "#info" ).dialog( "open" );
-    });
 	  
 	  
   } );
@@ -67,17 +60,9 @@
 </head>
 <body>
  
-<div id="info" title="Informació de sala">
-	<p><strong>Disposa de: </strong><br>- Pantalla tàctil<br>- Kit teclat, ratolí, VGA<br>
-		<br><strong>Màxima ocupació:</strong><br>8 persones<br><br><strong>Observacions:</strong><br></p>
-</div>
 	
 <div id="cancel" title="Confirmeu cancel·lació">
 </div>
-
-	
-
-<button id="opener_info">Informació sala</button>
 	
 <table id="taula_reserves">
 	<tr>
