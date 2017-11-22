@@ -77,7 +77,7 @@
    	 position: absolute;
    }
    
-   .logo, .titleReserva {
+   .logo{
      padding-top: 20px;
      padding-right: 30px;
      padding-bottom: 5px;
@@ -149,29 +149,29 @@
       </tr>
     </table>
   </div>
-  <table>
-    <tr>
-      <td>
-       <div class="titleReserva"><h3>Reserva Aules de CRAI</h3></div>
-      </td>
-      <td>
-       <div class="dropdown">
-         <table>
-           <tr>
-               <td><label>Oussama El Azizi: </label></td>
-               <td><button class="dropbtn"> <image src="img/menu24.png" onmouseover="hover(this);" onmouseout="unhover(this);"></image></button></td>
-           </tr>
-         </table>
-         <div class="dropdown-content">
-           <a href="#">Intranet</a>
-           <a href="#">Idioma</a>
-           <a href="inici.html">Sortir</a>
-         </div>
-       </div>
-      </td>
-    </tr>
-  </table>
   <div class="principal">
+      <table width="100%">
+          <tr>
+              <td width="50%">
+                  <div class="titleReserva"><h3>Reserva Aules de CRAI</h3></div>
+              </td>
+              <td width="50%" align="right">
+                  <div class="dropdown">
+                      <table width="100%">
+                          <tr width="100%">
+                              <td><label>Oussama El Azizi: </label></td>
+                              <td><button class="dropbtn"> <image src="img/menu24.png" onmouseover="hover(this);" onmouseout="unhover(this);"></image></button></td>
+                          </tr>
+                      </table>
+                      <div class="dropdown-content">
+                          <a href="#">Intranet</a>
+                          <a href="#">Idioma</a>
+                          <a href="inici.html">Sortir</a>
+                      </div>
+                  </div>
+              </td>
+          </tr>
+      </table>
    <div id="tabs">
      <ul>
        <li><a href="#tabs-1">Reserva Sala</a></li>
@@ -240,11 +240,11 @@
 			if (campus=="Catalunya") CargaContingut('subpages/principal.html')
 			if (campus=="Sescelades") CargaContingut('subpages/principal.html')
 			if (campus=="Vila-seca") CargaContingut('subpages/principal.html')
-			if (campus=="Terres de l'Ebre") CargaContingut('subpages/principal.html')
+			if (campus=="Terres de l'Ebre") CargaContingut('subpages/2-salas.html')
 			if (campus=="Medicina i Ciències de la Salut") CargaContingut('subpages/principal.html')
 			if (campus=="Baix Penedès") CargaContingut('subpages/principal.html')
         }
-    });
+    }).datepicker("setDate", new Date());
 
     $(".dropdown table tr td button ").hover(
         function(event) {
