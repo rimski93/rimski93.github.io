@@ -867,7 +867,8 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-tabs .ui-tabs-panel {
 	display: block;
-	border-width: 0;
+	border-top: 0;
+	border-width: 5px;
 	padding: 1em 1.4em;
 	background: none;
 }
@@ -980,10 +981,10 @@ a.ui-button:focus {
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
-	border: 1px solid #003eff;
-	background: #007fff;
+	border: 1px solid #c5c5c5;
+	background: white;
 	font-weight: normal;
-	color: #ffffff;
+	color: black;
 }
 .ui-icon-background,
 .ui-state-active .ui-icon-background {
@@ -993,7 +994,7 @@ a.ui-button:active,
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-	color: #ffffff;
+	color: black;
 	text-decoration: none;
 }
 

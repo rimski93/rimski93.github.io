@@ -52,7 +52,10 @@
      padding-bottom: 0; 
      padding-right: .1em; 
      border-right-width: 1px; 
+	   
    }
+	  
+	  
    .ui-tabs-vertical .ui-tabs-panel 
    { 
      padding: 1em; 
@@ -63,6 +66,24 @@
    { 
      margin-right: -7px;
    }
+	  
+	.ui-tabs-tab
+   { 
+     width: 49.2%; 
+   }
+	  
+	 .ui-icon-background,
+.ui-state-active .ui-icon-background {
+	border: #c5c5c5;
+	background-color: white;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: black;
+	text-decoration: none;
+}
+
 
    .principal {
      padding-top: 5px;
@@ -84,8 +105,18 @@
      padding-left: 30px;
    }
 	  
-	 .logo a {
+	.menu_superior{
+     padding-top: 20px;
+     padding-right: 30px;
+     padding-bottom: 5px;
+     padding-left: 30px;
+	 background-color:#90282a;
+   }
+	  
+	  
+	 .menu_superior a {
 		text-decoration: none; 
+		color: white;
 	  }
 	  
 	.clear {clear:both;}
@@ -148,27 +179,28 @@
   </style>
 </head>
 <body>
+  <div class="menu_superior">
+	  <table style="color:white" width="100%">
+		  <tr style="text-align:right">
+			  <td width="20%" style="text-align:left"><strong>CAT</strong>&ensp;&ensp;ESP&ensp;&ensp;ENG</td>
+			  <td width="60%"><strong>Oussama El Azizi</strong></td>
+			  <td width="20%"><button onclick="location.href='inici.html'"><strong>Sortir</strong>&ensp;<img src="./img/sortir.png" height="15px"/></button></td>
+		  </tr>
+	  </table>
+  </div>
   <div class="logo">
     <table width="100%">
       <tr>
         <td><img src ="img/logo-crai.jpg"/></td>
-		  <td align="right"><label>Oussama El Azizi&ensp;</label></td>
-		  <td align="center"><a href="inici.html">Surt&ensp;<img src="./img/sortir.png" height="20"></a></td>
+		  <td align="left"> <div class="titleReserva"><h3>Reserva Aules de CRAI</h3></div>
       </tr>
     </table>
   </div>
-  <div class="principal">
-      <table width="100%">
-          <tr>
-              <td width="50%">
-                  <div class="titleReserva"><h3>Reserva Aules de CRAI</h3></div>
-              </td>
-          </tr>
-      </table>
+  <div class="principal"><br>
    <div id="tabs">
      <ul>
-       <li><a href="#tabs-1">Reserva Sala</a></li>
-       <li><a href="#tabs-2">Gestionar reserva</a></li>
+		 <li><a href="#tabs-1"><strong>Reserva Sala</strong></a></li>
+		 <li><a href="#tabs-2"><strong>Gestionar reserva</strong></a></li>
      </ul>
      <div id="tabs-1">
        <form action="#">
