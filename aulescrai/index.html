@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AULES CRAI</title>
+  <title>SALES CRAI</title>
   <link rel="stylesheet" href="jquery-ui.css"/>
     <link rel="stylesheet" href="jquery-ui.theme.css"/>
 	<link rel="shortcut icon" href="img/favicon.ico">
@@ -119,6 +119,11 @@
 		color: white;
 	  }
 	  
+	  .menu_superior a:hover {
+		text-decoration: underline;
+		color: white;
+	  }
+	  
 	.clear {clear:both;}
    
    footer{
@@ -182,7 +187,7 @@
   <div class="menu_superior">
 	  <table style="color:white" width="100%">
 		  <tr style="text-align:right">
-			  <td width="20%" style="text-align:left"><strong>CAT</strong>&ensp;&ensp;ESP&ensp;&ensp;ENG</td>
+			  <td width="20%" style="text-align:left"><strong><a href="#">CAT</a></strong>&ensp;&ensp;<a href="#">ESP</a>&ensp;&ensp;<a href="#">ENG</a></td>
 			  <td width="60%"><strong>Oussama El Azizi</strong></td>
 			  <td width="20%"><button onclick="location.href='inici.html'"><strong>Sortir</strong>&ensp;<img src="./img/sortir.png" height="15px"/></button></td>
 		  </tr>
@@ -192,22 +197,22 @@
     <table width="100%">
       <tr>
         <td><img src ="img/logo-crai.jpg"/></td>
-		  <td align="left"> <div class="titleReserva"><h3>Reserva Aules de CRAI</h3></div>
+		  <td align="left"><div class="titleReserva" style="font-size:1.4em"><h3>Reserva de Sales del CRAI</h3></div></td>
       </tr>
     </table>
   </div>
-  <div class="principal"><br>
+  <div class="principal">
    <div id="tabs">
      <ul>
 		 <li><a href="#tabs-1"><strong>Reserva Sala</strong></a></li>
-		 <li><a href="#tabs-2"><strong>Gestionar reserva</strong></a></li>
+		 <li><a href="#tabs-2"><strong>Gestionar reserves</strong></a></li>
      </ul>
      <div id="tabs-1">
        <form action="#">
         <fieldset>
-          <table>
+          <table width="100%">
             <tr>
-              <td>
+              <td width="60%">
                 <label for="campus">Selecciona el CRAI: </label>
                 <select name="campus" id="campus">
                   <option>Bellissens</option>
@@ -219,7 +224,7 @@
 				  <option>Baix Penedès</option>
                 </select>
               </td>
-              <td>
+              <td width="40%">
                 <p >Data: <input type="text" id="datepicker"></p>
               </td>
            </tr>
@@ -258,6 +263,7 @@
 	});
     $( "#datepicker" ).datepicker({
 		firstDay: 1,
+		minDate: 0,
 		dateFormat: 'dd/mm/yy',
 		dayNamesMin: ['Dg','Dl','Dt','Dc','Dj','Dv','Ds'],
 		dayNames: ['Diumenge','Dilluns','Dimarts','Dimecres','Dijous','Divendres','Dissabte'],

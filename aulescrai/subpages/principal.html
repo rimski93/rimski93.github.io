@@ -103,6 +103,9 @@
   #selectable12 { list-style-type: none; margin: 0; padding: 0; width: 1110px; }
   #selectable12 li { margin: 1px; padding: 1px; float: left; width: 35px; height: 20px; font-size: 4em; text-align: center; }
   </style>
+  <style>
+  #taula { overflow-x: scroll; }
+  </style>
   
 
   <script>  
@@ -348,7 +351,28 @@
 	
 	}  
 	  
+	function mostra_pantalla(){
+		var element = document.getElementById("pantalla");
+		if (element.checked){
+			document.getElementById("selectable12").style.visibility="hidden";
+		}
+		else{
+			document.getElementById("selectable12").style.visibility="visible";
+		}
+	}
 	  
+	  
+	function mostra_pissarra(){
+		var element = document.getElementById("pissarra");
+		if (element.checked){
+			document.getElementById("selectable4").style.visibility="hidden";
+			document.getElementById("selectable3").style.visibility="hidden";
+		}
+		else{
+			document.getElementById("selectable4").style.visibility="visible";
+			document.getElementById("selectable3").style.visibility="visible";
+		}
+	}
 	  
 </script>
 
@@ -357,19 +381,42 @@
 
 </head>
 <body>
+<br>
+<div id="filtre">
+	<br><em>Podeu filtrar les sales segons material o capacitat d'ocupants: </em><br><br>
+		<table width="100%">
+			<tr>
+				<td width="50%">
+				<fieldset>
+				Materials que necessiteu:<br><br>
+				<input type="checkbox" id="pantalla" onClick="mostra_pantalla()">Pantalla tàctil&ensp;&ensp;&ensp;
+				<input type="checkbox" id="pissarra" onClick="mostra_pissarra()">Pissarra
+				</fieldset>
+				</td>
+				<td width="50%">
+				<fieldset>
+				Capacitat de la sala:<br>
+				<br><br>
+				</fieldset>
+				</td>
+			</tr>
+		</table>
+	
+</div>
 <p id="feedback">
 <span>Hores seleccionades:</span> <span id="select-result"></span>.
 </p>
 	
 <div id="info" title="Informació de la sala">
 </div>
+
 	
 <div id="taula">
-<table width="1300">
+<table width="1150">
 	<tr>
 		<td>
 			<ol id="selectable0">
-			  <li class="ui-state-default"> </li>
+			  <li class="ui-state-default"></li>
 			  <li class="ui-state-default">08:00 08.30</li>
 			  <li class="ui-state-default">08.30 09:00</li>
 			  <li class="ui-state-default">09.00 09:30</li>
@@ -395,7 +442,6 @@
 			  <li class="ui-state-default">19.00 19:30</li>
 			  <li class="ui-state-default">19.30 20:00</li>
 			  <li class="ui-state-default">20.00 20:30</li>
-			  <li class="ui-state-default">20.30 21:00</li>
 			</ol>
 		</td>
 	</tr>
@@ -405,7 +451,6 @@
 				<li class="ui-state-default">1</li>
 			</ol>
 			<ol id="selectable1">
-			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -466,7 +511,6 @@
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
-			  <li class="ui-state-default"> </li>
 			</ol>
 			<button onclick="mostrar('Campus Sescelades', '2', '8 persones', '- Pantalla tàctil', '- Pissarra', 'No funciona la pantalla')" >Info</button>
 		</td>
@@ -477,7 +521,6 @@
 				<li class="ui-state-default">3</li>
 			</ol>
 			<ol id="selectable3">
-			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -538,7 +581,6 @@
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
-			  <li class="ui-state-default"> </li>
 			</ol>
 			<button onclick="mostrar('Campus Sescelades', '4', '8 persones', '- Pantalla tàctil', '', '')" >Info</button>
 		</td>
@@ -549,7 +591,6 @@
 				<li class="ui-state-default">5</li>
 			</ol>
 			<ol id="selectable5">
-			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -610,7 +651,6 @@
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
-			  <li class="ui-state-default"> </li>
 			</ol>
 			<button onclick="mostrar('Campus Sescelades', '6', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" >Info</button>
 		</td>
@@ -621,7 +661,6 @@
 				<li class="ui-state-default">7</li>
 			</ol>
 			<ol id="selectable7">
-			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -682,7 +721,6 @@
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
-			  <li class="ui-state-default"> </li>
 			</ol>
 			<button onclick="mostrar('Campus Sescelades', '8', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" >Info</button>
 		</td>
@@ -693,7 +731,6 @@
 				<li class="ui-state-default">9</li>
 			</ol>
 			<ol id="selectable9">
-			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -754,7 +791,6 @@
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
-			  <li class="ui-state-default"> </li>
 			</ol>
 			<button onclick="mostrar('Campus Sescelades', '10', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" >Info</button>
 		</td>
@@ -790,7 +826,6 @@
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
-			  <li class="ui-state-default"> </li>
 			</ol>
 			<button onclick="mostrar('Campus Sescelades', '11', '8 persones', '- Pantalla tàctil', '- Pissarra', '')" >Info</button>
 		</td>
@@ -801,7 +836,6 @@
 				<li class="ui-state-default">12</li>
 			</ol>
 			<ol id="selectable12">
-			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
