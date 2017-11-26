@@ -38,6 +38,9 @@
 				$( this ).dialog( "close" );
 				var i = $(this).data('posicio');
 				document.getElementById("taula_reserves").deleteRow(i+1);
+                var reserves = JSON.parse(sessionStorage.getItem("reserves"));
+                reserves = reserves.splice($("#taula_reserves tr").length-2+i,1);
+                sessionStorage.setItem("reserves", JSON.stringify(reserves));
 			},
 			"No": function() {
 				$( this ).dialog( "close" );
