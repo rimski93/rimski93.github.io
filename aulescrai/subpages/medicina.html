@@ -91,6 +91,8 @@
 	<script>
         var horesSeleccionades = [];
         var reservesFetes=[];
+        if (sessionStorage.getItem("reserves"))
+            reservesFetes = JSON.parse(sessionStorage.getItem("reserves"));
         $( "#selectable1" ).selectable({
             selecting: function(event, ui) {
                 if ($("#selectable1 .ui-selected, .ui-selecting").length > 6) {
