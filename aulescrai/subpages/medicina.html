@@ -112,7 +112,7 @@
                 result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
                 horesSeleccionades[3] = sessionStorage.getItem("data");
                 horesSeleccionades[4] = "1";
-                horesSeleccionades[5] = "Campus Terres de l'Ebre";
+                horesSeleccionades[5] = "Campus Medicina i Ciències de la salut";
 
             }
         });
@@ -197,6 +197,15 @@
                 width: "350"
             } );
         });
+		
+		
+		 $( function() {
+		 $( "#ok" ).dialog({
+			autoOpen: false,
+			width: "350"
+		 } );
+		});  
+		
         $( function () {
             var dialog;
             $('#confirm').dialog({
@@ -213,6 +222,7 @@
                         }
                         reservesFetes.push(horesSeleccionades.slice(0));
                         sessionStorage.setItem("reserves", JSON.stringify(reservesFetes));
+						$('#ok').dialog("open");
                         $( this ).dialog("close");
                     },
                     "Cancelar": function() {
@@ -300,6 +310,9 @@
 <div id="info" title="Informació de la sala">
 </div>
 <div id="confirm" title="Confirma la reserva">
+</div>
+<div id="ok" title="Reserva realitzada">
+<br>La reserva s'ha completat correctament!
 </div>
 
 
