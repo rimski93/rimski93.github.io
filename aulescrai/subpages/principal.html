@@ -105,11 +105,34 @@
   </style>
   <style>
   #taula { overflow-x: scroll; }
+  .reservarSala{
+	  width: 100%;
+	  margin-top: 5px;
+  }
+  .reservarSala .reserva{
+	  background-color: #90282a;
+	  width: 250px;
+	  padding: 12px 28px;
+	  font-size: 16px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  border: none;
+	  color: white;
+	  cursor: pointer;
+
+  }
+  .reservarSala .reserva:hover {
+	  background-color: rgb(109, 39, 41)
+  }
+
   </style>
   
 
-  <script>  
-    $( "#selectable1" ).selectable({
+  <script>
+	  var horesSeleccionades = [];
+	  var reservesFetes=[];
+      $( "#selectable1" ).selectable({
 	  selecting: function(event, ui) { 
 		 if ($("#selectable1 .ui-selected, .ui-selecting").length > 6) {
 		   $(ui.selecting).removeClass("ui-selecting");
@@ -119,12 +142,17 @@
 		for (i=1;i<13;i++)
 			if(i!=1) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
+      stop: function()
+	  {
+        var $selected = $(this).children('.ui-selected');
         var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable1 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
+        horesSeleccionades[0] = sessionStorage[$("#selectable1 li").index($selected.first())];
+        horesSeleccionades[1]=sessionStorage[$("#selectable1 li").index($selected.last())+1];
+        result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+        horesSeleccionades[3] = sessionStorage.getItem("data");
+        horesSeleccionades[4] = "1";
+        horesSeleccionades[5] = "Campus Sescelades";
+
       }
     });
 	
@@ -138,13 +166,19 @@
 		for (i=1;i<13;i++)
 			if(i!=2) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable2 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
+        stop: function()
+        {
+            var $selected = $(this).children('.ui-selected');
+            var result = $( "#select-result" ).empty();
+            var index = $( "#selectable2 li" ).index( this );
+            horesSeleccionades[0] = sessionStorage[$("#selectable2 li").index($selected.first())];
+            horesSeleccionades[1]=sessionStorage[$("#selectable2 li").index($selected.last())+1];
+            result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+            horesSeleccionades[3] = sessionStorage.getItem("data");
+            horesSeleccionades[4] = "2";
+            horesSeleccionades[5] = "Campus Sescelades";
+
+        }
     });
 	
 	$( "#selectable3" ).selectable({
@@ -157,13 +191,19 @@
 		for (i=1;i<13;i++)
 			if(i!=3) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable3 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
+        stop: function()
+        {
+            var $selected = $(this).children('.ui-selected');
+            var result = $( "#select-result" ).empty();
+            var index = $( "#selectable3 li" ).index( this );
+            horesSeleccionades[0] = sessionStorage[$("#selectable3 li").index($selected.first())];
+            horesSeleccionades[1]=sessionStorage[$("#selectable3 li").index($selected.last())+1];
+            result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+            horesSeleccionades[3] = sessionStorage.getItem("data");
+            horesSeleccionades[4] = "3";
+            horesSeleccionades[5] = "Campus Sescelades";
+
+        }
     });
 	
 	$( "#selectable4" ).selectable({
@@ -176,13 +216,18 @@
 		for (i=1;i<13;i++)
 			if(i!=4) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable4 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
+        stop: function()
+        {
+            var $selected = $(this).children('.ui-selected');
+            var result = $( "#select-result" ).empty();
+            var index = $( "#selectable4 li" ).index( this );
+            horesSeleccionades[0] = sessionStorage[$("#selectable4 li").index($selected.first())];
+            horesSeleccionades[1]=sessionStorage[$("#selectable4 li").index($selected.last())+1];
+            result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+            horesSeleccionades[3] = sessionStorage.getItem("data");
+            horesSeleccionades[4] = "4";
+            horesSeleccionades[5] = "Campus Sescelades";
+        }
     });
 	
 	$( "#selectable5" ).selectable({
@@ -195,13 +240,19 @@
 		for (i=1;i<13;i++)
 			if(i!=5) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable5 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
+        stop: function()
+        {
+            var $selected = $(this).children('.ui-selected');
+            var result = $( "#select-result" ).empty();
+            var index = $( "#selectable5 li" ).index( this );
+            horesSeleccionades[0] = sessionStorage[$("#selectable5 li").index($selected.first())];
+            horesSeleccionades[1]=sessionStorage[$("#selectable5 li").index($selected.last())+1];
+            result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+            horesSeleccionades[3] = sessionStorage.getItem("data");
+            horesSeleccionades[4] = "5";
+            horesSeleccionades[5] = "Campus Sescelades";
+
+        }
     });
 	
 	$( "#selectable6" ).selectable({
@@ -214,13 +265,19 @@
 		for (i=1;i<13;i++)
 			if(i!=6) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable6 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
+        stop: function()
+        {
+            var $selected = $(this).children('.ui-selected');
+            var result = $( "#select-result" ).empty();
+            var index = $( "#selectable6 li" ).index( this );
+            horesSeleccionades[0] = sessionStorage[$("#selectable6 li").index($selected.first())];
+            horesSeleccionades[1]=sessionStorage[$("#selectable6 li").index($selected.last())+1];
+            result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+            horesSeleccionades[3] = sessionStorage.getItem("data");
+            horesSeleccionades[4] = "6";
+            horesSeleccionades[5] = "Campus Sescelades";
+
+        }
     });
 	
 	$( "#selectable7" ).selectable({
@@ -233,13 +290,19 @@
 		for (i=1;i<13;i++)
 			if(i!=7) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable7 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
+        stop: function()
+        {
+            var $selected = $(this).children('.ui-selected');
+            var result = $( "#select-result" ).empty();
+            var index = $( "#selectable7 li" ).index( this );
+            horesSeleccionades[0] = sessionStorage[$("#selectable7 li").index($selected.first())];
+            horesSeleccionades[1]=sessionStorage[$("#selectable7 li").index($selected.last())+1];
+            result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+            horesSeleccionades[3] = sessionStorage.getItem("data");
+            horesSeleccionades[4] = "7";
+            horesSeleccionades[5] = "Campus Sescelades";
+
+        }
     });
 	
 	$( "#selectable8" ).selectable({
@@ -252,13 +315,19 @@
 		for (i=1;i<13;i++)
 			if(i!=8) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable8 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
+        stop: function()
+        {
+            var $selected = $(this).children('.ui-selected');
+            var result = $( "#select-result" ).empty();
+            var index = $( "#selectable8 li" ).index( this );
+            horesSeleccionades[0] = sessionStorage[$("#selectable8 li").index($selected.first())];
+            horesSeleccionades[1]=sessionStorage[$("#selectable8 li").index($selected.last())+1];
+            result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+            horesSeleccionades[3] = sessionStorage.getItem("data");
+            horesSeleccionades[4] = "8";
+            horesSeleccionades[5] = "Campus Sescelades";
+
+        }
     });
 	
 	$( "#selectable9" ).selectable({
@@ -271,13 +340,19 @@
 		for (i=1;i<13;i++)
 			if(i!=9) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable9 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
+        stop: function()
+        {
+            var $selected = $(this).children('.ui-selected');
+            var result = $( "#select-result" ).empty();
+            var index = $( "#selectable9 li" ).index( this );
+            horesSeleccionades[0] = sessionStorage[$("#selectable9 li").index($selected.first())];
+            horesSeleccionades[1]=sessionStorage[$("#selectable9 li").index($selected.last())+1];
+            result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+            horesSeleccionades[3] = sessionStorage.getItem("data");
+            horesSeleccionades[4] = "9";
+            horesSeleccionades[5] = "Campus Sescelades";
+
+        }
     });
 	
 	$( "#selectable10" ).selectable({
@@ -290,13 +365,19 @@
 		for (i=1;i<13;i++)
 			if(i!=10) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable10 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
+        stop: function()
+        {
+            var $selected = $(this).children('.ui-selected');
+            var result = $( "#select-result" ).empty();
+            var index = $( "#selectable10 li" ).index( this );
+            horesSeleccionades[0] = sessionStorage[$("#selectable10 li").index($selected.first())];
+            horesSeleccionades[1]=sessionStorage[$("#selectable10 li").index($selected.last())+1];
+            result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+            horesSeleccionades[3] = sessionStorage.getItem("data");
+            horesSeleccionades[4] = "10";
+            horesSeleccionades[5] = "Campus Sescelades";
+
+        }
     });
 	
 	$( "#selectable11" ).selectable({
@@ -309,13 +390,19 @@
 		for (i=1;i<13;i++)
 			if(i!=11) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable11 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
+        stop: function()
+        {
+            var $selected = $(this).children('.ui-selected');
+            var result = $( "#select-result" ).empty();
+            var index = $( "#selectable11 li" ).index( this );
+            horesSeleccionades[0] = sessionStorage[$("#selectable11 li").index($selected.first())];
+            horesSeleccionades[1]=sessionStorage[$("#selectable11 li").index($selected.last())+1];
+            result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+            horesSeleccionades[3] = sessionStorage.getItem("data");
+            horesSeleccionades[4] = "11";
+            horesSeleccionades[5] = "Campus Sescelades";
+
+        }
     });
 	
 	$( "#selectable12" ).selectable({
@@ -328,13 +415,19 @@
 		for (i=1;i<13;i++)
 			if(i!=12) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
 	  },
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable12 li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
+        stop: function()
+        {
+            var $selected = $(this).children('.ui-selected');
+            var result = $( "#select-result" ).empty();
+            var index = $( "#selectable12 li" ).index( this );
+            horesSeleccionades[0] = sessionStorage[$("#selectable12 li").index($selected.first())];
+            horesSeleccionades[1]=sessionStorage[$("#selectable12 li").index($selected.last())+1];
+            result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+            horesSeleccionades[3] = sessionStorage.getItem("data");
+            horesSeleccionades[4] = "12";
+            horesSeleccionades[5] = "Campus Sescelades";
+
+        }
     });
 	  
 	$( function() {
@@ -343,6 +436,37 @@
 		width: "350"
 	 } );
 	});
+	$( function () {
+	    var dialog;
+		dialog = $('#confirm').dialog({
+            autoOpen: false,
+            width: "450",
+            modal: true,
+			buttons:{
+                "Acceptar": function() {
+                    if(sessionStorage.getItem("numElem")){
+                        var num = Number(sessionStorage.getItem("numElem"))+1;
+                        sessionStorage.setItem("numElem", num);
+                    }else{
+                        sessionStorage.setItem("numElem", 1);
+                    }
+                    reservesFetes.push(horesSeleccionades.slice(0));
+                    sessionStorage.setItem("reserves", JSON.stringify(reservesFetes));
+                    dialog.dialog("close");;
+                },
+                "Cancelar": function() {
+                    $( this ).dialog( "close" );
+                }
+			}
+		});
+        $( "#reserv" ).button().on( "click", function() {
+            var text = "<strong>Reserva: </strong><br><br>Sala "+horesSeleccionades[4]+" del CRAI "+horesSeleccionades[5]+"<br><br> Periode:&ensp;"
+                +horesSeleccionades[0]+"-"+horesSeleccionades[1]+"<br>Data:&ensp;"+horesSeleccionades[3];
+            document.getElementById("confirm").innerHTML = text;
+            dialog.dialog( "open" );
+        });
+    });
+
 	  
 	function mostrar(campus, numero, ocupacio, pantalla, pissarra, observacions){
 		var text = "<br>Sala "+numero+" del CRAI "+campus+"<br><br><strong>&ensp;Disposa de:</strong><br>&ensp;&ensp;"+pantalla+"<br>&ensp;&ensp;"+pissarra+"<br><br><strong>&ensp;Màxima ocupació:</strong><br>&ensp;&ensp;- "+ocupacio+"<br><br><strong>&ensp;Observacions:</strong><br>&ensp;"+observacions+"<br><br>";
@@ -373,6 +497,7 @@
 			document.getElementById("selectable3").style.visibility="visible";
 		}
 	}
+
 	  
 </script>
 
@@ -409,13 +534,15 @@
 	
 <div id="info" title="Informació de la sala">
 </div>
+<div id="confirm" title="Confirma la reserva">
+</div>
 
 	
 <div id="taula">
 <table width="1150">
 	<tr>
 		<td>
-			<ol id="selectable0">
+			<ol class = "selectable" id="selectable0">
 			  <li class="ui-state-default"></li>
 			  <li class="ui-state-default">08:00 08.30</li>
 			  <li class="ui-state-default">08.30 09:00</li>
@@ -450,7 +577,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">1</li>
 			</ol>
-			<ol id="selectable1">
+			<ol class = "selectable" id="selectable1">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -485,7 +612,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">2</li>
 			</ol>
-			<ol id="selectable2">
+			<ol class = "selectable" id="selectable2">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -520,7 +647,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">3</li>
 			</ol>
-			<ol id="selectable3">
+			<ol class = "selectable" id="selectable3">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -555,7 +682,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">4</li>
 			</ol>
-			<ol id="selectable4">
+			<ol class = "selectable" id="selectable4">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -590,7 +717,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">5</li>
 			</ol>
-			<ol id="selectable5">
+			<ol class = "selectable" id="selectable5">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -625,7 +752,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">6</li>
 			</ol>
-			<ol id="selectable6">
+			<ol class = "selectable" id="selectable6">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -660,7 +787,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">7</li>
 			</ol>
-			<ol id="selectable7">
+			<ol class = "selectable" id="selectable7">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -695,7 +822,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">8</li>
 			</ol>
-			<ol id="selectable8">
+			<ol class = "selectable" id="selectable8">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -730,7 +857,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">9</li>
 			</ol>
-			<ol id="selectable9">
+			<ol class = "selectable" id="selectable9">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -765,7 +892,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">10</li>
 			</ol>
-			<ol id="selectable10">
+			<ol class = "selectable" id="selectable10">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -800,7 +927,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">11</li>
 			</ol>
-			<ol id="selectable11">
+			<ol class = "selectable" id="selectable11">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -835,7 +962,7 @@
 			<ol id="selectableA">
 				<li class="ui-state-default">12</li>
 			</ol>
-			<ol id="selectable12">
+			<ol class = "selectable" id="selectable12">
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
 			  <li class="ui-state-default"> </li>
@@ -866,6 +993,11 @@
 		</td>
 	</tr>
 </table>
+</div>
+
+<div class ="reservarSala">
+	<button class = "reserva" id="reserv">Reservar la sala</button>
+
 </div>
 
 </body>

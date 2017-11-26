@@ -55,7 +55,28 @@
 		$( "#cancel" ).data('posicio', i).dialog( "open" );
 	
 	}
-	  
+	function cargar_datos() {
+		if(sessionStorage.getItem("numElem")){
+            var table = document.getElementById("taula_reserves");
+            var reserves = JSON.parse(sessionStorage.getItem("reserves"));
+		    for(i = 0; i < Number(sessionStorage.getItem("numElem")); i++){
+				var listElem = reserves[i];
+				var row = table.insertRow(-1);
+				row.setAttribute("align", "center")
+				row.insertCell(0).innerHTML=listElem[3];
+				row.insertCell(1).innerHTML = listElem[0];
+				row.insertCell(2).innerHTML = listElem[1];
+				row.insertCell(3).innerHTML = listElem [5];
+				row.insertCell(4).innerHTML = listElem [4];
+                var btn = document.createElement("BUTTON");
+                btn.setAttribute("class","esborrar");
+                btn.setAttribute("onclick", "eliminar($(\"#taula_reserves tr\").length, , listElem[0], listElem[4], listElem[5])");
+                btn.appendChild(document.createTextNode("Esborrar"));
+                row.insertCell(5).appendChild(btn);
+		    }
+		}
+    }
+  $(document).ready(cargar_datos());
   </script>
 </head>
 <body>
