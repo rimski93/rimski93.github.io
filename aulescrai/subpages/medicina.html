@@ -1,0 +1,493 @@
+﻿<html>
+<head>
+	<title>Aules</title>
+	<!--<script src="js/jquery.js"></script>-->
+
+	<style>
+		#feedbackA { font-size: 1.4em; }
+		#selectableA .ui-selecting { background: #FECA40; }
+		#selectableA .ui-selected { background: #F39814; color: white; }
+		#selectableA { list-style-type: none; margin: 0; padding: 0; width: 35px; }
+		#selectableA li { margin: 1px; padding: 1px; float: left; width: 35px; height: 20px; font-size: 1em; text-align: center; }
+	</style>
+
+	<style>
+		#feedback { font-size: 1.4em; }
+		#selectable0 .ui-selecting { background: #f6f6f6; }
+		#selectable0 .ui-selected { background: #f6f6f6; color: white; }
+		#selectable0 { list-style-type: none; margin: 0; padding: 0; width: 1110px; }
+		#selectable0 li { margin: 1px; padding: 1px; float: left; width: 35px; height: 40px; font-size: 0.9em; text-align: center; }
+	</style>
+
+	<style>
+		#feedback1 { font-size: 1.4em; }
+		#selectable1 .ui-selecting { background: #FECA40; }
+		#selectable1 .ui-selected { background: #F39814; color: white; }
+		#selectable1 .ui-disabled { background: #0B2161; color: white; }
+		#selectable1 { list-style-type: none; margin: 0; padding: 0; width: 1110px; }
+		#selectable1 li { margin: 1px; padding: 1px; float: left; width: 35px; height: 20px; font-size: 4em; text-align: center; }
+	</style>
+	<style>
+		#feedback2 { font-size: 1.4em; }
+		#selectable2 .ui-selecting { background: #FECA40; }
+		#selectable2 .ui-selected { background: #F39814; color: white; }
+		#selectable2 .ui-disabled { background: #0B2161; color: white; }
+		#selectable2 { list-style-type: none; margin: 0; padding: 0; width: 1110px; }
+		#selectable2 li { margin: 1px; padding: 1px; float: left; width: 35px; height: 20px; font-size: 4em; text-align: center; }
+	</style>
+	<style>
+		#feedback3 { font-size: 1.4em; }
+		#selectable3 .ui-selecting { background: #FECA40; }
+		#selectable3 .ui-selected { background: #F39814; color: white; }
+		#selectable3 .ui-disabled { background: #0B2161; color: white; }
+		#selectable3 { list-style-type: none; margin: 0; padding: 0; width: 1110px; }
+		#selectable3 li { margin: 1px; padding: 1px; float: left; width: 35px; height: 20px; font-size: 4em; text-align: center; }
+	</style>
+	<style>
+		#feedback4 { font-size: 1.4em; }
+		#selectable4 .ui-selecting { background: #FECA40; }
+		#selectable4 .ui-selected { background: #F39814; color: white; }
+		#selectable4 .ui-disabled { background: #0B2161; color: white; }
+		#selectable4 { list-style-type: none; margin: 0; padding: 0; width: 1110px; }
+		#selectable4 li { margin: 1px; padding: 1px; float: left; width: 35px; height: 20px; font-size: 4em; text-align: center; }
+	</style>
+	<style>
+		#selectablellegenda .ui-selecting { background: #FECA40; }
+		#selectablellegenda .ui-selected { background: #F39814; color: white; }
+		#selectablellegenda .ui-disabled { background: #0B2161; color: white; }
+		#selectablellegenda { list-style-type: none; margin: 0; padding: 0; width: 1110px; }
+		#selectablellegenda li { margin: 1px; padding: 1px; float: left; width: 35px; height: 20px; font-size: 4em; text-align: center; }
+	</style>
+
+
+
+	<style>
+		#taula { overflow-x: scroll; }
+		.reservarSala{
+			width: 100%;
+			margin-top: 5px;
+		}
+		.reservarSala .reserva{
+			background-color: #90282a;
+			width: 250px;
+			padding: 12px 28px;
+			font-size: 16px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			border: none;
+			color: white;
+			cursor: pointer;
+
+		}
+		.reservarSala .reserva:hover {
+			background-color: rgb(109, 39, 41);
+			color: white;
+		}
+
+	</style>
+
+
+	<script>
+        var horesSeleccionades = [];
+        var reservesFetes=[];
+        $( "#selectable1" ).selectable({
+            selecting: function(event, ui) {
+                if ($("#selectable1 .ui-selected, .ui-selecting").length > 6) {
+                    $(ui.selecting).removeClass("ui-selecting");
+                }
+            },
+            selected: function( event, ui ) {
+                for (i=1;i<13;i++)
+                    if(i!=1) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+            },
+            stop: function()
+            {
+                var $selected = $(this).children('.ui-selected');
+                var result = $( "#select-result" ).empty();
+                horesSeleccionades[0] = sessionStorage[$("#selectable1 li").index($selected.first())];
+                horesSeleccionades[1]=sessionStorage[$("#selectable1 li").index($selected.last())+1];
+                result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+                horesSeleccionades[3] = sessionStorage.getItem("data");
+                horesSeleccionades[4] = "1";
+                horesSeleccionades[5] = "Campus Terres de l'Ebre";
+
+            }
+        });
+
+        $( "#selectable2" ).selectable({
+            selecting: function(event, ui) {
+                if ($("#selectable2 .ui-selected, .ui-selecting").length > 6) {
+                    $(ui.selecting).removeClass("ui-selecting");
+                }
+            },
+            selected: function( event, ui ) {
+                for (i=1;i<13;i++)
+                    if(i!=2) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+            },
+            stop: function()
+            {
+                var $selected = $(this).children('.ui-selected');
+                var result = $( "#select-result" ).empty();
+                var index = $( "#selectable2 li" ).index( this );
+                horesSeleccionades[0] = sessionStorage[$("#selectable2 li").index($selected.first())];
+                horesSeleccionades[1]=sessionStorage[$("#selectable2 li").index($selected.last())+1];
+                result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+                horesSeleccionades[3] = sessionStorage.getItem("data");
+                horesSeleccionades[4] = "2";
+                horesSeleccionades[5] = "Campus Medicina i Ciències de la salut";
+
+            }
+        });
+
+        $( "#selectable3" ).selectable({
+            selecting: function(event, ui) {
+                if ($("#selectable3 .ui-selected, .ui-selecting").length > 6) {
+                    $(ui.selecting).removeClass("ui-selecting");
+                }
+            },
+            selected: function( event, ui ) {
+                for (i=1;i<13;i++)
+                    if(i!=3) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+            },
+            stop: function()
+            {
+                var $selected = $(this).children('.ui-selected');
+                var result = $( "#select-result" ).empty();
+                var index = $( "#selectable3 li" ).index( this );
+                horesSeleccionades[0] = sessionStorage[$("#selectable3 li").index($selected.first())];
+                horesSeleccionades[1]=sessionStorage[$("#selectable3 li").index($selected.last())+1];
+                result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+                horesSeleccionades[3] = sessionStorage.getItem("data");
+                horesSeleccionades[4] = "3";
+                horesSeleccionades[5] = "Campus Medicina i Ciències de la salut";
+
+            }
+        });
+
+        $( "#selectable4" ).selectable({
+            selecting: function(event, ui) {
+                if ($("#selectable4 .ui-selected, .ui-selecting").length > 6) {
+                    $(ui.selecting).removeClass("ui-selecting");
+                }
+            },
+            selected: function( event, ui ) {
+                for (i=1;i<13;i++)
+                    if(i!=4) $( "#selectable"+i+" .ui-selected" ).removeClass('ui-selected')
+            },
+            stop: function()
+            {
+                var $selected = $(this).children('.ui-selected');
+                var result = $( "#select-result" ).empty();
+                var index = $( "#selectable4 li" ).index( this );
+                horesSeleccionades[0] = sessionStorage[$("#selectable4 li").index($selected.first())];
+                horesSeleccionades[1]=sessionStorage[$("#selectable4 li").index($selected.last())+1];
+                result.append(horesSeleccionades[0]+ "-"+horesSeleccionades[1] );
+                horesSeleccionades[3] = sessionStorage.getItem("data");
+                horesSeleccionades[4] = "4";
+                horesSeleccionades[5] = "Campus Medicina i Ciències de la salut";
+            }
+        });
+
+        $( function() {
+            $( "#info" ).dialog({
+                autoOpen: false,
+                width: "350"
+            } );
+        });
+        $( function () {
+            var dialog;
+            $('#confirm').dialog({
+                autoOpen: false,
+                width: "450",
+                modal: true,
+                buttons:{
+                    "Acceptar": function() {
+                        if(sessionStorage.getItem("numElem")){
+                            var num = Number(sessionStorage.getItem("numElem"))+1;
+                            sessionStorage.setItem("numElem", num);
+                        }else{
+                            sessionStorage.setItem("numElem", 1);
+                        }
+                        reservesFetes.push(horesSeleccionades.slice(0));
+                        sessionStorage.setItem("reserves", JSON.stringify(reservesFetes));
+                        $( this ).dialog("close");
+                    },
+                    "Cancelar": function() {
+                        $( this ).dialog( "close" );
+                    }
+                }
+            });
+            $( "#reserv" ).button().on( "click", function() {
+                var text = "<strong>Reserva: </strong><br><br>Sala "+horesSeleccionades[4]+" del CRAI "+horesSeleccionades[5]+"<br><br> Periode:&ensp;"
+                    +horesSeleccionades[0]+"-"+horesSeleccionades[1]+"<br>Data:&ensp;"+horesSeleccionades[3];
+                document.getElementById("confirm").innerHTML = text;
+                $('#confirm').dialog( "open" );
+            });
+        });
+
+
+        function mostrar(campus, numero, ocupacio, pantalla, pissarra, observacions){
+            var text = "<br>Sala "+numero+" del CRAI "+campus+"<br><br><strong>&ensp;Disposa de:</strong><br>&ensp;&ensp;"+pantalla+"<br>&ensp;&ensp;"+pissarra+"<br><br><strong>&ensp;Màxima ocupació:</strong><br>&ensp;&ensp;- "+ocupacio+"<br><br><strong>&ensp;Observacions:</strong><br>&ensp;"+observacions+"<br><br>";
+            document.getElementById("info").innerHTML = text;
+            $( "#info" ).dialog( "open" );
+
+        }
+
+        function mostra_pantalla(){
+            var element = document.getElementById("pantalla");
+            if (element.checked){
+                document.getElementById("selectable12").style.visibility="hidden";
+            }
+            else{
+                document.getElementById("selectable12").style.visibility="visible";
+            }
+        }
+
+
+        function mostra_pissarra(){
+            var element = document.getElementById("pissarra");
+            if (element.checked){
+                document.getElementById("selectable4").style.visibility="hidden";
+                document.getElementById("selectable3").style.visibility="hidden";
+            }
+            else{
+                document.getElementById("selectable4").style.visibility="visible";
+                document.getElementById("selectable3").style.visibility="visible";
+            }
+        }
+
+
+	</script>
+
+
+
+
+</head>
+<body>
+<br>
+<div id="filtre">
+	<br><em>Podeu filtrar les sales segons material o capacitat d'ocupants: </em><br><br>
+	<table width="100%">
+		<tr>
+			<td width="50%">
+				<fieldset>
+					Materials que necessiteu:<br><br>
+					<input type="checkbox" id="pantalla" onClick="mostra_pantalla()">Pantalla tàctil&ensp;&ensp;&ensp;
+					<input type="checkbox" id="pissarra" onClick="mostra_pissarra()">Pissarra
+				</fieldset>
+			</td>
+			<td width="50%">
+				<fieldset>
+					Capacitat de la sala:<br><br>
+					<select name="capacitat">
+						<option value="4oc">4 ocupants</option>
+						<option value="5oc">5 ocupants</option>
+						<option value="6oc">6 ocupants</option>
+					</select>
+				</fieldset>
+			</td>
+		</tr>
+	</table>
+
+</div>
+<p id="feedback">
+	<span>Hores seleccionades:</span> <span id="select-result"></span>.
+</p>
+
+<div id="info" title="Informació de la sala">
+</div>
+<div id="confirm" title="Confirma la reserva">
+</div>
+
+
+<div id="taula">
+	<table width="1150">
+		<tr>
+			<td>
+				<ol class = "selectable" id="selectable0">
+					<li class="ui-state-default"></li>
+					<li class="ui-state-default">08:00 08.30</li>
+					<li class="ui-state-default">08.30 09:00</li>
+					<li class="ui-state-default">09.00 09:30</li>
+					<li class="ui-state-default">09.30 10:00</li>
+					<li class="ui-state-default">10.00 10:30</li>
+					<li class="ui-state-default">10.30 11:00</li>
+					<li class="ui-state-default">11.00 11:30</li>
+					<li class="ui-state-default">11.30 12:00</li>
+					<li class="ui-state-default">12.00 12:30</li>
+					<li class="ui-state-default">12.30 13:00</li>
+					<li class="ui-state-default">13.00 13:30</li>
+					<li class="ui-state-default">13.30 14:00</li>
+					<li class="ui-state-default">14.00 14:30</li>
+					<li class="ui-state-default">14.30 15:00</li>
+					<li class="ui-state-default">15.00 15:30</li>
+					<li class="ui-state-default">15.30 16:00</li>
+					<li class="ui-state-default">16.00 16:30</li>
+					<li class="ui-state-default">16.30 17:00</li>
+					<li class="ui-state-default">17.00 17:30</li>
+					<li class="ui-state-default">17.30 18:00</li>
+					<li class="ui-state-default">18.00 18:30</li>
+					<li class="ui-state-default">18.30 19:00</li>
+					<li class="ui-state-default">19.00 19:30</li>
+					<li class="ui-state-default">19.30 20:00</li>
+					<li class="ui-state-default">20.00 20:30</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<ol id="selectableA">
+					<li class="ui-state-default">1</li>
+				</ol>
+				<ol class = "selectable" id="selectable1">
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+				</ol>
+				<button onclick="mostrar('Campus Medicina i Ciències de la salut', '1', '6 persones', '- Pantalla tàctil', '- Pissarra', '')">Info</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<ol id="selectableA">
+					<li class="ui-state-default">2</li>
+				</ol>
+				<ol class = "selectable" id="selectable2">
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default"> </li>
+				</ol>
+				<button onclick="mostrar('Campus Medicina i Ciències de la salut', '2', '6 persones', '- Pantalla tàctil', '- Pissarra', 'No funciona la pantalla')" >Info</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<ol id="selectableA">
+					<li class="ui-state-default">3</li>
+				</ol>
+				<ol class = "selectable" id="selectable3">
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+				</ol>
+				<button onclick="mostrar('Campus Medicina i Ciències de la salut', '3', '6 persones', '- Pantalla tàctil', '', '')">Info</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<ol id="selectableA">
+					<li class="ui-state-default">4</li>
+				</ol>
+				<ol class = "selectable" id="selectable4">
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default ui-disabled"> </li>
+					<li class="ui-state-default"> </li>
+				</ol>
+				<button onclick="mostrar('Campus Medicina i Ciències de la salut', '4', '6 persones', '- Pantalla tàctil', '', '')" >Info</button>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div class="llegenda"><br>
+	<ol class = "selectable" id="selectablellegenda"> <li class="ui-state-default ui-disabled"></li></ol>&emsp;Hores ocupades<br><br>
+	<ol class = "selectable" id="selectablellegenda"> <li class="ui-state-default"> </li></ol>&emsp;Hores disponibles<br><br>
+	<ol class = "selectable" id="selectablellegenda"> <li class="ui-state-default ui-selected"> </li></ol>&emsp;La vostra selecció<br>
+</div>
+
+<div class ="reservarSala" 	align="center">
+	<button class = "reserva" id="reserv">Reservar la sala</button>
+</div>
+
+</body>
+</html>
+

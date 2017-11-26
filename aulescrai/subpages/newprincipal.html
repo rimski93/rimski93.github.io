@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 1.4em;
+        }
+        table {
+            min-width: 30%;
+        }
+        table > thead > tr > td {
+            padding: 0.3em;
+        }
+        table > tbody > tr {
+            cursor: pointer;
+        }
+        .total {
+            margin: 1.2em 0;
+        }
+    </style>
+    <script>
+        $(function() {
+
+            /*
+             * Updates the total span based on the selected table rows.
+             * Here, we're summing the balance column.  This behavior is defined
+             * as a function here because it's used in several selectable event
+             * handlers below.
+             *
+             */
+            function updateTotal( $selectees ) {
+
+                selected = $.makeArray( $selectees.filter( ".ui-selected" ) );
+
+                var total = selected.reduce( function( a, b ) {
+                    return a + parseInt( $( b ).children( "td:last" ).text() );
+                }, 0 );
+
+                $( ".total > span " ).text( total );
+
+            }
+
+            $( "table > tbody" ).selectable({
+
+                // Don't allow individual table cell selection.
+                filter: ":not(td)",
+
+                // Update the initial total to 0, since nothing is selected yet.
+                create: function( e, ui ) {
+                    updateTotal( $() );
+                },
+
+                // When a row is selected, add the highlight class to the row and
+                // update the total.
+                selected: function( e, ui ) {
+                    $( ui.selected ).addClass( "ui-state-highlight" );
+                    var widget = $( this ).data( "uiSelectable" );
+                    updateTotal( widget.selectees );
+                },
+
+                // When a row is unselected, remove the highlight class from the row
+                // and update the total.
+                unselected: function( e, ui ) {
+                    $( ui.unselected ).removeClass( "ui-state-highlight" );
+                    var widget = $( this ).data( "uiSelectable" )
+                    updateTotal( widget.selectees );
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+<table class="ui-widget">
+   <!-- <thead colspan ="27" class="ui-widget-header">
+    <tr>
+        <td>HORES</td>
+    </tr>
+    </thead>-->
+    <th>08:00 - 08.30</th>
+    <th>08.30 - 09:00</th>
+    <th>09.00 - 09:30</th>
+    <th>09.30 - 10:00</th>
+    <th>10.00 - 10:30</th>
+    <th>10.30 - 11:00</th>
+    <th>11.00 - 11:30</th>
+    <th>11.30 - 12:00</th>
+    <th>12.00 - 12:30</th>
+    <th>12.30 - 13:00</th>
+    <th>13.00 - 13:30</th>
+    <th>13.30 - 14:00</th>
+    <th>14.00 - 14:30</th>
+    <th>14.30 - 15:00</th>
+    <th>15.00 - 15:30</th>
+    <th>15.30 - 16:00</th>
+    <th>16.00 - 16:30</th>
+    <th>16.30 - 17:00</th>
+    <th>17.00 - 17:30</th>
+    <th>17.30 - 18:00</th>
+    <th>18.00 - 18:30</th>
+    <th>18.30 - 19:00</th>
+    <th>19.00 - 19:30</th>
+    <th>19.30 - 20:00</th>
+    <th>20.00 - 20:30</th>
+    <th>20.30 - 21:00</th>
+    <tbody class="ui-widget-content ui-state-default">
+    <tr>
+        <td>1</td>
+        <td>John</td>
+        <td>200</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Mary</td>
+        <td>186</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Bob</td>
+        <td>385</td>
+    </tr>
+    </tbody>
+</table>
+<div class="total ui-widget">
+    <strong>Total: </strong><span></span>
+</div>
+</body>
+</html>

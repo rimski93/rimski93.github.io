@@ -245,13 +245,13 @@
         onSelect:function(dateText, inst){
 			var campus = $("#campus").val()
             sessionStorage.setItem("data",$(datepicker).datepicker().val())
-			if (campus=="Bellissens") CargaContingut('subpages/principal.html')
-			if (campus=="Catalunya") CargaContingut('subpages/principal.html')
+			if (campus=="Bellissens") CargaContingut('subpages/bellicens.html')
+			if (campus=="Catalunya") CargaContingut('subpages/catalunya.html')
 			if (campus=="Sescelades") CargaContingut('subpages/principal.html')
-			if (campus=="Vila-seca") CargaContingut('subpages/principal.html')
-			if (campus=="Terres de l'Ebre") CargaContingut('subpages/2-salas.html')
-			if (campus=="Medicina i Ciències de la Salut") CargaContingut('subpages/principal.html')
-			if (campus=="Baix Penedès") CargaContingut('subpages/principal.html')
+			if (campus=="Vila-seca") CargaContingut('subpages/vila-seca.html')
+			if (campus=="Terres de l'Ebre") CargaContingut('subpages/terres-ebre.html')
+			if (campus=="Medicina i Ciències de la Salut") CargaContingut('subpages/medicina.html')
+			if (campus=="Baix Penedès") CargaContingut('subpages/baixpenedes.html')
         }
     });//.datepicker("setDate", new Date());
 
